@@ -1,9 +1,84 @@
 var spiral = function(array) {
   var arr = [];
+  var arrTag = [];
+  // var dirState = ['r', 'd', 'l', 'u'];
+  for (var i = 0; i < array.length; i++) {
+    arrTag.push([]);
+    for (var j = 0; i < array.length; j++) {
+      arrTag[i].push(j);
+    };
+  }
 
-  var move = function(start, end, dir) {
-    
+  var row = 0, col = 0;
+
+  var tagElement = function(row, col) {
+    arrTag[row][col] = 1;
+  }
+
+  var checkBoundary = function(row, col) {
+    return arrTag[row][col] !== '1' && array[row][col] !== undefined;
+  }
+
+  // transition between states
+  var move = function(dir) {
+    // if (dir === 'r') {
+    if (dir === 0) {
+      while (checkBoundary(row, col)) {
+        tagElement(row, col);
+        arr.push(array[row][col]);
+        col += 1;
+      }
+      col -= 1;
+      return dir+1;
+    }
+
+    if (dir === 1) {
+      while (checkBoundary(row, col)) {
+        tagElement(row, col);
+        arr.push(array[row][col]);
+        row += 1;
+      }
+      row -= 1;
+      return dir+1;
+    }
+
+    if (dir === 2) {
+      while (checkBoundary(row, col)) {
+        tagElement(row, col);
+        arr.push(array[row][col]);
+        col -= 1;
+      }
+      col += 1;
+      return dir+1;
+    }
+
+    if (dir === 3) {
+      while (checkBoundary(row, col)) {
+        tagElement(row, col);
+        arr.push(array[row][col]);
+        row -= 1;
+      }
+      row += 1;
+      return 0;
+    }
+  }
+
+
+  // checkLength
+  var dir = move(0);
+  while(arr.length !== array.length * array[0].length) {
+    dir = move(dir);
   }
 
   return arr;
 }
+
+// 1 2 3 4 5      10 15 20 25 24      23 22 21 16 11     6 7 8 9 14     19 18 17 12 13 
+var a = [[1, 2, 3, 4, 5], 
+         [6, 7, 8, 9, 10],
+         [11, 12, 13, 14, 15],
+         [16, 17, 18, 19, 20],
+         [21, 22, 23, 24, 25],
+        ]
+
+console.log(spiral(a));
