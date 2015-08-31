@@ -16,53 +16,36 @@ var spiral = function(array) {
     return arrTag[row] !== undefined && arrTag[row][col] !== 1 && array[row][col] !== undefined;
   }
 
+  var stateAction = function(callback, rev) {
+    callback();
+    while (checkBoundary(row, col)) {
+      // console.log(row + " " + col);
+      tagElement(row, col);
+      arr.push(array[row][col]);
+      callback();
+    }
+    rev();
+  }
+
   // transition between states
   var move = function(dir) {
     if (dir === 0) {
-      col += 1;
-      while (checkBoundary(row, col)) {
-        // console.log(row + " " + col);
-        tagElement(row, col);
-        arr.push(array[row][col]);
-        col += 1;
-      }
-      col -= 1;
+      stateAction(function() { col += 1 }, function() { col -= 1 })
       return dir+1;
     }
 
     if (dir === 1) {
-      row += 1;
-      while (checkBoundary(row, col)) {
-        // console.log(row + " " + col);
-        tagElement(row, col);
-        arr.push(array[row][col]);
-        row += 1;
-      }
-      row -= 1;
+      stateAction(function() { row += 1 }, function() { row -= 1 });
       return dir+1;
     }
 
     if (dir === 2) {
-      col -= 1;
-      while (checkBoundary(row, col)) {
-        // console.log(row + " " + col);
-        tagElement(row, col);
-        arr.push(array[row][col]);
-        col -= 1;
-      }
-      col += 1;
+      stateAction(function() { col -= 1 }, function() { col += 1 });
       return dir+1;
     }
 
     if (dir === 3) {
-      row -= 1;
-      while (checkBoundary(row, col)) {
-        // console.log(row + " " + col);
-        tagElement(row, col);
-        arr.push(array[row][col]);
-        row -= 1;
-      }
-      row += 1;
+      stateAction(function() { row -= 1 }, function() { row += 1 });
       return 0;
     }
   }
