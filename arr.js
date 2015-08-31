@@ -17,16 +17,13 @@ var spiral = function(array) {
   }
 
   var stateAction = function(update, rev) {
-    // callback();
     eval(update);
     while (checkBoundary(row, col)) {
       // console.log(row + " " + col);
       tagElement(row, col);
       arr.push(array[row][col]);
-      // callback();
       eval(update)
     }
-    // rev();
     eval(rev)
   }
 
