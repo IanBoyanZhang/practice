@@ -4,26 +4,24 @@ var spiral = function(array) {
   // var dirState = ['r', 'd', 'l', 'u'];
   for (var i = 0; i < array.length; i++) {
     arrTag.push([]);
-    for (var j = 0; i < array.length; j++) {
-      arrTag[i].push(j);
-    };
   }
 
-  var row = 0, col = 0;
+  var row = 0, col = -1;
 
   var tagElement = function(row, col) {
     arrTag[row][col] = 1;
   }
 
   var checkBoundary = function(row, col) {
-    return arrTag[row][col] !== '1' && array[row][col] !== undefined;
+    return arrTag[row] !== undefined && arrTag[row][col] !== 1 && array[row][col] !== undefined;
   }
 
   // transition between states
   var move = function(dir) {
-    // if (dir === 'r') {
     if (dir === 0) {
+      col += 1;
       while (checkBoundary(row, col)) {
+        // console.log(row + " " + col);
         tagElement(row, col);
         arr.push(array[row][col]);
         col += 1;
@@ -33,7 +31,9 @@ var spiral = function(array) {
     }
 
     if (dir === 1) {
+      row += 1;
       while (checkBoundary(row, col)) {
+        // console.log(row + " " + col);
         tagElement(row, col);
         arr.push(array[row][col]);
         row += 1;
@@ -43,7 +43,9 @@ var spiral = function(array) {
     }
 
     if (dir === 2) {
+      col -= 1;
       while (checkBoundary(row, col)) {
+        // console.log(row + " " + col);
         tagElement(row, col);
         arr.push(array[row][col]);
         col -= 1;
@@ -53,7 +55,9 @@ var spiral = function(array) {
     }
 
     if (dir === 3) {
+      row -= 1;
       while (checkBoundary(row, col)) {
+        // console.log(row + " " + col);
         tagElement(row, col);
         arr.push(array[row][col]);
         row -= 1;
