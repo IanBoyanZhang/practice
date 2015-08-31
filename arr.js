@@ -16,40 +16,42 @@ var spiral = function(array) {
     return arrTag[row] !== undefined && arrTag[row][col] !== 1 && array[row][col] !== undefined;
   }
 
-  var stateAction = function(callback, rev) {
-    callback();
+  var stateAction = function(update, rev) {
+    // callback();
+    eval(update);
     while (checkBoundary(row, col)) {
       // console.log(row + " " + col);
       tagElement(row, col);
       arr.push(array[row][col]);
-      callback();
+      // callback();
+      eval(update)
     }
-    rev();
+    // rev();
+    eval(rev)
   }
 
   // transition between states
   var move = function(dir) {
     if (dir === 0) {
-      stateAction(function() { col += 1 }, function() { col -= 1 })
+      stateAction("col += 1", "col -= 1");
       return dir+1;
     }
 
     if (dir === 1) {
-      stateAction(function() { row += 1 }, function() { row -= 1 });
+      stateAction("row += 1", "row -= 1");
       return dir+1;
     }
 
     if (dir === 2) {
-      stateAction(function() { col -= 1 }, function() { col += 1 });
+      stateAction("col -= 1", "col += 1");
       return dir+1;
     }
 
     if (dir === 3) {
-      stateAction(function() { row -= 1 }, function() { row += 1 });
+      stateAction("row -= 1", "row += 1");
       return 0;
     }
   }
-
 
   // checkLength
   var dir = move(0);
