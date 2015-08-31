@@ -1,4 +1,12 @@
-var spiral = function(array) {
+/* 
+ * callback implementation is faster than implemenation using eval()
+ * Use !== in while condition is faster than <
+ * Array length caching seems didn't produce performance difference on Leetcode platform
+ * Potential reason: the engine is optimized for this type of caching
+ */
+
+var spiral = function(matrix) {
+  var array = matrix;
   var arr = [];
   var arrTag = [];
   // var dirState = ['r', 'd', 'l', 'u'];
@@ -7,6 +15,7 @@ var spiral = function(array) {
   }
 
   var row = 0, col = -1;
+  var m = array.length, n = array[0].length;
 
   var tagElement = function(row, col) {
     arrTag[row][col] = 1;
@@ -52,7 +61,7 @@ var spiral = function(array) {
 
   // checkLength
   var dir = move(0);
-  while(arr.length !== array.length * array[0].length) {
+  while(arr.length !== m * n) {
     dir = move(dir);
   }
 
