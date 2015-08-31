@@ -39,30 +39,6 @@ var spiral = function(matrix) {
     rev();
   }
 
-  // transition between states
-  var move = function(dir) {
-    if (dir === 0) {
-      stateAction(function() { col += 1 }, function() { col -= 1 })
-      return dir+1;
-    }
-
-    if (dir === 1) {
-      stateAction(function() { row += 1 }, function() { row -= 1 });
-      return dir+1;
-    }
-
-    if (dir === 2) {
-      stateAction(function() { col -= 1 }, function() { col += 1 });
-      return dir+1;
-    }
-
-    if (dir === 3) {
-      stateAction(function() { row -= 1 }, function() { row += 1 });
-      return 0;
-    }
-  }
-
-
   // checkLength
   var dir = 0;
   while(arr.length !== m * n) {
