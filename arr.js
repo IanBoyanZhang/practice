@@ -6,16 +6,19 @@
  */
 
 var spiral = function(matrix) {
-  var array = matrix;
+    var array = matrix;
   var arr = [];
+  if (matrix.length === 0) { return arr }
   var arrTag = [];
   // var dirState = ['r', 'd', 'l', 'u'];
   for (var i = 0; i < array.length; i++) {
     arrTag.push([]);
   }
+  
+  var m = matrix.length;
+  var n = matrix[0].length;
 
   var row = 0, col = -1;
-  var m = array.length, n = array[0].length;
 
   var tagElement = function(row, col) {
     arrTag[row][col] = 1;
@@ -25,44 +28,64 @@ var spiral = function(matrix) {
     return arrTag[row] !== undefined && arrTag[row][col] !== 1 && array[row][col] !== undefined;
   }
 
-  var stateAction = function(update, rev) {
-    eval(update);
+  var stateAction = function(callback, rev) {
+    callback();
     while (checkBoundary(row, col)) {
       // console.log(row + " " + col);
       tagElement(row, col);
       arr.push(array[row][col]);
-      eval(update)
+      callback();
     }
-    eval(rev)
+    rev();
   }
 
   // transition between states
   var move = function(dir) {
     if (dir === 0) {
-      stateAction("col += 1", "col -= 1");
+      stateAction(function() { col += 1 }, function() { col -= 1 })
       return dir+1;
     }
 
     if (dir === 1) {
-      stateAction("row += 1", "row -= 1");
+      stateAction(function() { row += 1 }, function() { row -= 1 });
       return dir+1;
     }
 
     if (dir === 2) {
-      stateAction("col -= 1", "col += 1");
+      stateAction(function() { col -= 1 }, function() { col += 1 });
       return dir+1;
     }
 
     if (dir === 3) {
-      stateAction("row -= 1", "row += 1");
+      stateAction(function() { row -= 1 }, function() { row += 1 });
       return 0;
     }
   }
 
+
   // checkLength
-  var dir = move(0);
+  var dir = 0;
   while(arr.length !== m * n) {
-    dir = move(dir);
+    // dir = move(dir);
+    if (dir === 0) {
+      stateAction(function() { col += 1 }, function() { col -= 1 })
+      dir+=1;
+    }
+
+    if (dir === 1) {
+      stateAction(function() { row += 1 }, function() { row -= 1 });
+      dir+=1;
+    }
+
+    if (dir === 2) {
+      stateAction(function() { col -= 1 }, function() { col += 1 });
+      dir+=1;
+    }
+
+    if (dir === 3) {
+      stateAction(function() { row -= 1 }, function() { row += 1 });
+      dir=0;
+    }
   }
 
   return arr;

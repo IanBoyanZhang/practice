@@ -9,8 +9,10 @@ var spiralOrder = function(matrix) {
   // var num_row
   var col_start = 0;
   var row_start = 0;
+  var m = matrix.length;
+  var n = matrix[0].length;
   // while (num_row > 0 && num_col > 0) {
-  while (ans.length !== matrix.length * matrix[0].length) {
+  while (ans.length !== m * n) {
     for (var i = 0; i < num_col; i++) {
       ans.push(matrix[row_start][col_start + i]);
     };
