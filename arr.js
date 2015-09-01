@@ -6,7 +6,7 @@
  */
 
 var spiral = function(matrix) {
-    var array = matrix;
+  var array = matrix;
   var arr = [];
   if (matrix.length === 0) { return arr }
   var arrTag = [];
