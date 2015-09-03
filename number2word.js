@@ -51,15 +51,41 @@ var numberToWords = function(num) {
 
 
   // check how many bits 
-  var getNumDigits = function(number) {
-    return number.toString().length;
-  }
+  // var getNumDigits = function(number) {
+  //   return number.toString().length;
+  // }
 
-  var simpleParser = function(number) {
-    var digits = getNumDigits(number);
+  // var rtnStr = "";
+  // var thCounter = 0;
+  // var simpleParser = function(str, number) {
+  //   // simple parser
+  //   var divider = 100;
+  //   var order = Math.floor(number / divider);
+  //   var digit = number % divider;
+  //   rtnStr = ToWords[order] + " " + ToPlace[divider];
+  //   // divide divider
+  //   divider = divider / 10;
+  //   var residue = digit % divider; 
+  //   var teens = Math.floor(digit / divider);
 
-    // Slice the number
-    
-  }
+  //   rtnStr = rtnStr + " " + ToWords[teens] + " " + ToWords[residue];
+  //   return rtnStr;
+  // }
 
+  // // chunk numbers into pieces
+  // var recursiveParser = function(number) {
+  //   if (number < 1000) {
+  //     rtnStr = simpleParser(rtnStr, number);
+  //   } else {
+  //     // divide by 1000 then call recursion
+  //     var newNum = rtnStr/1000;
+  //   }
+  // }
+
+  // recursiveParser(num);
+
+  
+  return rtnStr;
 };
+
+console.log(numberToWords(385));
