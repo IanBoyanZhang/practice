@@ -27,9 +27,7 @@ var twoSum = function(nums, target) {
       var idx2 = objIdx[numKey].idx[0];
       return idx1 > idx2 ? [idx2, idx1] : [idx1, idx2]
     }
-
   }
-
   return [];
 };
 
