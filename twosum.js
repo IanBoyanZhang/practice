@@ -13,17 +13,18 @@ var twoSum = function(nums, target) {
   }
 
   for ( var j = 0; j < len; j++) {  
-    if (objIdx[nums[j]].c === nums[j]) {
-      if (objIdx[nums[j]].idx.length === 2) {
-        return objIdx[nums[j]].idx;
+    var numKey = nums[j];
+    if (objIdx[numKey].c === numKey) {
+      if (objIdx[numKey].idx.length === 2) {
+        return objIdx[numKey].idx;
       } 
       continue;
     }
 
-    var candidateVal = objIdx[nums[j]].c;
-    if (objIdx[candidateVal] && objIdx[candidateVal].c === nums[j]) {
+    var candidateVal = objIdx[numKey].c;
+    if (objIdx[candidateVal] && objIdx[candidateVal].c === numKey) {
       var idx1 = objIdx[candidateVal].idx[0];
-      var idx2 = objIdx[nums[j]].idx[0];
+      var idx2 = objIdx[numKey].idx[0];
       return idx1 > idx2 ? [idx2, idx1] : [idx1, idx2]
     }
 
@@ -33,7 +34,7 @@ var twoSum = function(nums, target) {
 };
 
 // console.log(twoSum([3, 2, 4], 6));
-// console.log(twoSum([0, 4, 3, 0], 0));
+console.log(twoSum([0, 4, 3, 0], 0));
 console.log(twoSum([3,2,4], 6));
 // console.log(twoSum([0, 4, 3, 1], 7));
 // var target = 16021;
