@@ -1,9 +1,12 @@
 /*
  * Base line solution
+ * Using linked list for adjacency-list 
  */
 
 var Graph = function(){
   this._nodes = {};
+  // for BFS mapping
+  this.marked = [];
 };
 
 Graph.prototype.addNode = function(node){
@@ -33,6 +36,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode){
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){
+  // Weight
   this.nodes[fromNode][toNode] = 1;
   this.nodes[toNode][fromNode] = 1;
 };
@@ -47,6 +51,28 @@ Graph.prototype.forEachNode = function(cb){
     cb(node);
   }
 };
+
+Graph.prototype.bfs = function(s) {
+  var queue = [];
+  this.marked[s];
+  queue.push(s);
+  while (queue.length > 0) {
+    v = queue.shift()     // move a node out of queue
+    // if (!this.marked[v]) {
+    //   this.mar
+    // }
+    if (v !== undefined) {
+      console.log("Visited vertex: " + v);
+    }
+
+    for (var w in this.node[s][v]) {
+      if (!this.marked[w]) {
+        this.marked[w] = true;
+        queue.push(w);
+      }
+    }
+  }
+}
 
 /*
  * Complexity: What is the time complexity of the above functions?
