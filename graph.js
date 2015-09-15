@@ -37,8 +37,8 @@ Graph.prototype.hasEdge = function(fromNode, toNode){
 
 Graph.prototype.addEdge = function(fromNode, toNode){
   // Weight
-  this.nodes[fromNode][toNode] = 1;
-  this.nodes[toNode][fromNode] = 1;
+  this._nodes[fromNode][toNode] = 1;
+  this._nodes[toNode][fromNode] = 1;
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
@@ -58,9 +58,6 @@ Graph.prototype.bfs = function(s) {
   queue.push(s);
   while (queue.length > 0) {
     v = queue.shift()     // move a node out of queue
-    // if (!this.marked[v]) {
-    //   this.mar
-    // }
     if (v !== undefined) {
       console.log("Visited vertex: " + v);
     }
@@ -73,6 +70,8 @@ Graph.prototype.bfs = function(s) {
     }
   }
 }
+
+// Running test cases
 
 /*
  * Complexity: What is the time complexity of the above functions?
