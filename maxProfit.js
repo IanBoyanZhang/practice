@@ -3,7 +3,7 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
-  var highPrice = prices[0], lowPrice = prices[0];
+  var lowPrice = prices[0];
   var diff = 0;
   var maxDiff = diff;
   
@@ -17,3 +17,5 @@ var maxProfit = function(prices) {
 
   return maxDiff;  
 };
+
+maxProfit([1000, 5000, 100, 2000]);
