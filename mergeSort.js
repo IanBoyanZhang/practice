@@ -1,3 +1,4 @@
+// Merge Sort Top Down implementation using lists
 var mergeSort = function mergeSort(array) {
   if (array.length < 2) { return array }
 
