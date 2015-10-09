@@ -60,7 +60,7 @@ var RobotPath = function(x, y) {
     var newY = move(currX, currY, 0)[1];
     if (placable(newX, newY)) {
       brd[newX][newY] = 1;
-      step(newX, newY);
+      step(newX, newY, path);
       brd[newX][newY] = 0;
     }
 
@@ -68,7 +68,7 @@ var RobotPath = function(x, y) {
     newY = move(currX, currY, 0)[1];
     if (placable(newX, newY)) {
       brd[newX][newY] = 1;
-      step(newX, newY);
+      step(newX, newY, path);
       brd[newX][newY] = 0;
     }
 
@@ -76,8 +76,10 @@ var RobotPath = function(x, y) {
     // left or right
   };
 
-  recurse(0, 0, 0);
+  step(0, 0, 0);
 
   return Paths;
 };
+
+console.log(RobotPath(3,3));
 
