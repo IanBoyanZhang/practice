@@ -82,5 +82,5 @@ var RobotPath = function(x, y) {
   return counter;
 };
 
-console.log(RobotPath(1,1));
+console.log(RobotPath(2,2));
 
