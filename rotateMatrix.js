@@ -1,3 +1,4 @@
+// In place rotation
 var rotateMat = function(mat) {
     var len = mat.length;
     for (var i = 0; i < Math.ceil(len/2); i++) {
@@ -10,8 +11,8 @@ var rotateMat = function(mat) {
         }
     }
     return mat;
-}
-​
+};
+
 var genMat = function(n) {
     var rtnMat = [];
     for (var i = 0; i < n; i++) {
@@ -21,8 +22,6 @@ var genMat = function(n) {
         }
     }
     return rtnMat;
-}
-​
+};
 var someMat = genMat(5);
-​
 console.log(rotateMat(someMat));
