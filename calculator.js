@@ -11,7 +11,9 @@ var calculate = function(s) {
   var result = 0;
   var sign = 1;
 
-  var symbolLookup = ['+', '-', '(', ')'];
+  var mul = false;
+
+  var symbolLookup = ['+', '-', '(', ')', "*"];
   var isDigit = function(character) {
   	var charCodeAt = String.prototype.charCodeAt;
   	return charCodeAt.call(character) >= 48 && charCodeAt.call(character) <= 57;
@@ -26,6 +28,8 @@ var calculate = function(s) {
   	} else {
   	  result += sign * num;
   	  num = 0;
+
+      if (c === symbolLookup[4]) mul = true;
   	  if (c === symbolLookup[0]) sign = 1;
   	  if (c === symbolLookup[1]) sign = -1;
   	  if (c === symbolLookup[2]) {
@@ -35,7 +39,9 @@ var calculate = function(s) {
   	  	sign = 1;
   	  }
   	  if (c === symbolLookup[3] && ops.length) {
-  	  	result = ops[ops.length - 1 ] * result + nums[nums.length - 1];
+  	    // result = ops[ops.length - 1 ] *o result + nums[nums.length - 1];
+        if (!mul) result = ops[ops.length - 1 ] * result + nums[nums.length - 1];
+        if (mul) { result = ops[ops.length - 1] * result * nums[nums.length - 1]; mul = false; }
   	  	ops.pop(); nums.pop();
   	  }
   	}
@@ -45,3 +51,4 @@ var calculate = function(s) {
 };
 
 console.log(calculate("5 + 3"));
+console.log(calculate("5 + (3 + 10) + 5"));
