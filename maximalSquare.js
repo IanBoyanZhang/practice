@@ -4,22 +4,30 @@
  */
 var maximalSquare = function(matrix) {
   // Starting square
-  for (row=0, rowLen=matrix.length; row < rowLen; row++) {
-     for (var col=0, colLen=matrix[0].length; col < colLen; col++) {
-     }
+  var rowLen = matrix.length;
+  var colLen = matrix[0].length;
+  var maxArea = 0;
+  for (var i = 0; i < rowLen; i++) {
+    for (var j = 0; j < colLen; j++) {
+      // Keep tracking all possiblities then 
+      maxArea = Math.math(expandSearch(i, j, rowLen, colLen, matrix), maxArea);
+    }
   }
+  return maxArea;
 };
 
 // Possible binary solution
-// Assume Square
+// Assume targeting Square subArray
 // TODO: refactor to use incremental calculation to get square area
 // keep tracking current index for next tile calculation
-var expandSearch = function(startRC, endRC, matrix) {
+var expandSearch = function(sr, sc, er, ec, matrix) {
   'use strict';
-  for (var i = startRC+1; i < endRC; i++) {
-    if(!isBlock(startRC, startRC, i, i, matrix)) {
-      // break out the loop
-      return calcArea(startRC, startRC, endRC, endRC);
+  for (var i = sr+1; i < er; i++) {
+    for (var j = sc+1; j < ec; j++) {
+      if(!isBlock(sr, sc, i, j, matrix)) {
+        // break out the loop
+        return calcArea(sr, sc, i, j);
+      }
     }
   }
 };
