@@ -28,6 +28,7 @@ var maximalSquare = function(matrix) {
 // keep tracking current index for next tile calculation
 var expandSearch = function(sr, sc, er, ec, matrix) {
   'use strict';
+  // TODO: cache previous result
   var rtnArea = 0;
   for (var offset = 1; offset + sr < er; offset++) {
     if(!isBlock(sr, sc, sr + offset, sc + offset, matrix)) {
