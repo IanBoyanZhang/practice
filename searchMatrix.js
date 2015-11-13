@@ -25,7 +25,6 @@ var searchMatrix = function(matrix, target) {
     if (target === getCurrNum(high, row)) return true;
     if (target > getCurrNum(high, row)) return high;
 
-    if (row !== undefined) console.log("Row ", row);
     while(low < high) {
       newBound = halfBound(low, high);
       currNum = getCurrNum(newBound, row);
