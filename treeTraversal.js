@@ -38,8 +38,8 @@ constructor.prototype.deserialize = function(node, lr) {
     node.right = new Tree(this.arrayList[this.iter]);
     currNode = node.right;
   }
-  this.deserialize(currNode, this.iter, 1);
-  this.deserialize(currNode, this.iter, 0);
+  this.deserialize(currNode, 1);
+  this.deserialize(currNode, 0);
 };
 
 constructor.prototype.serialize = function(root) {
