@@ -1,4 +1,0 @@
-/**
- * Implement trie in JS
- *
- */

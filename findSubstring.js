@@ -6,6 +6,7 @@
  * All word in word list has to present and only once
  */
 
+// Essentially O(n^2) solution
 var findSubstring = function(s, words) {
   var wBucket = [];
   if (s === "" || words.length === 0) return wBucket;
@@ -27,10 +28,18 @@ var findSubstring = function(s, words) {
     return hash;
   };
   
+  var HASH = setupHash();
+  var copyObj = function(target) {
+    var rtnObj = {};
+    for (var key in target) {
+      rtnObj[key] = target[key];
+    }
+    return rtnObj;
+  };
+
   var validator = function(str) {
-    var hash = setupHash();
-//    console.log(hash);
-//    console.log("In validator: " + str);
+    var hash = copyObj(HASH);
+//    var hash = setupHash();
     var currWord;
     for (var i = 0, len = str.length; i < len; ) {
       currWord = "";
@@ -49,7 +58,8 @@ var findSubstring = function(s, words) {
   for (var i = 0; i < sLen - effLen + 1;) {
     substr = s.slice(i, i+effLen);
     if (validator(substr)) wBucket.push(i);
-    i = next(i, wLen);
+//    i = next(i, wLen);
+    i+=1;
   }
 
   return wBucket;
@@ -61,4 +71,13 @@ console.log(findSubstring(s, words));
 
 s = "wordgoodgoodgoodbestword";
 words = ["word","good","best","good"];
+console.log(findSubstring(s, words));
+
+
+s = "barfoofoobarthefoobarman";
+words = ["bar","foo","the"];
+console.log(findSubstring(s, words));
+
+s = "lingmindraboofooowingdingbarrwingmonkeypoundcake";
+words = ["fooo","barr","wing","ding","wing"];
 console.log(findSubstring(s, words));
