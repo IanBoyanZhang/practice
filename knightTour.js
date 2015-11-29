@@ -1,8 +1,12 @@
 /**
  * Explore solution to original Knight's tour problem
  * if every point on board could be touched only once
+ * Problem description:
+ * https://en.wikipedia.org/wiki/Knight%27s_tour
+ * TODO: Utilize the symmetry
  * @param boardSize {n, m}
- * @return {Array []} Possible solution tracking
+ * @return {Array []} Possible solution tracking or number of solutions
+ * TODO: open close
  */
 var knightTour = function(n, m) {
   m = m || n;
