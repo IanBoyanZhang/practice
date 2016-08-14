@@ -7,6 +7,7 @@
  * Combination problem
  * Optimization hash previous result
  * Optimization reuse partial prod
+ * Optimization lookup table
  * super large number?
  */
 
@@ -57,14 +58,16 @@ var countNumbersWithUniqueDigits = function(n) {
   return count * UNIT + 10;
 };
 
+// lookup table solution
+var countNumbersWithUniqueDigits = function(n) {
+  var hash = [1, 10, 91, 739, 5275, 32491,
+              168571, 712891, 2345851, 
+              5611771,8877691];
+  return n > 10 ? hash[10] : hash[n];
+};
 
 
-console.log(countNumbersWithUniqueDigits(2));
-console.log(countNumbersWithUniqueDigits(3));
-console.log(countNumbersWithUniqueDigits(5));
-console.log(countNumbersWithUniqueDigits(11));
-console.log(countNumbersWithUniqueDigits(12));
-console.log(countNumbersWithUniqueDigits(13));
-console.log(countNumbersWithUniqueDigits(8));
-console.log(countNumbersWithUniqueDigits(9));
-console.log(countNumbersWithUniqueDigits(10));
+for (var i = 0; i <= 10; i+=1) {
+  console.log(countNumbersWithUniqueDigits(i));
+}
+console.log(countNumbersWithUniqueDigits(100));
