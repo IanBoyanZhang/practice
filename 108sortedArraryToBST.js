@@ -1,6 +1,8 @@
 /**
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST
  * Assumption: no dup
+ * Explanation:
+ * http://articles.leetcode.com/convert-sorted-array-into-balanced/
  * @param {number []} nums
  * @return {TreeNode}
  */
