@@ -19,6 +19,7 @@ var detectCycle = function(head) {
       if (!metOnce) {
         slow = head;
         metOnce = true;
+        // Cover cycle linked list at index 0
         if (slow === fast) {
           return slow;
         }
