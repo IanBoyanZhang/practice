@@ -1,22 +1,20 @@
 var TreeNode = require('./include/TreeNode').TreeNode;
+
 /**
  * @param {TreeNode} root
- * @return {Number[]}
+ * @return {number[]}
+ *
  */
 
-// Top down
-var preorderTraversal = function(root) {
+var inorderTraversal = function(root) {
   var stack = [];
   var dfs = function(node) {
     if (!node) return;
-    stack.push(node.val);
     dfs(node.left);
     dfs(node.right);
+    stack.push(node.val);
   };
 
   dfs(root);
   return stack;
 };
-
-
-// Can you do it iteravitely?
