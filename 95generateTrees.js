@@ -6,7 +6,7 @@ var TreeNode = require('./include/TreeNode').TreeNode;
  *
  */
 
-// Back tracking?
+// http://bangbingsyb.blogspot.com/2014/11/leetcode-unique-binary-search-trees-i-ii.html
 var generateTrees = function(n) {
   if (!n) return null;
 
