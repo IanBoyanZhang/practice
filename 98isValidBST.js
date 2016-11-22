@@ -62,7 +62,29 @@ console.log(rtn);
  */
 // Traverse binary search tree in order
 var isValidBST = function(root) {
-  var dfs = function(node) {
+  var helper = function(node) {
+     if (!node) return [true, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY];
+     var left = helper(node.left);
+     var right = helper(node.right);
+
+     if (left[0] === undefined || right[0] === undefined) {
+       return [false, 0, 0];
+     }
+
+     if (node.left !== null && left[1] >= node.val) {
+       return [false, 0, 0];
+     }
+
+     if (node.right !== null && right[2] <= node.val) {
+       return [false, 0, 0];
+     }
+     return [left[0] && right[0], Math.max(node.val, right[1]), Math.min(node.val, left[2])];
   };
-  dfs(root);
+
+  return helper(root)[0];
 };
+
+var root = new TreeNode(1);
+root.left = new TreeNode(1);
+var rtn = isValidBST(root);
+console.log(rtn);
