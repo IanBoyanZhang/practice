@@ -55,3 +55,18 @@ var sumNumbers = function(root) {
   };
   return walk(root, 0, 0);
 };
+
+// Fully recursive
+var sumNumbers = function(root, parentSum, sum) {
+  parentSum = parentSum || 0;
+  sum = sum || 0;
+  if (!root) return 0;
+  if (root.left === null && root.right === null) 
+    return parentSum*10 + root.val + sum;
+  var accu = sum;
+  accu += sumNumbers(root.left, parentSum*10 + root.val, sum);
+  accu += sumNumbers(root.right, parentSum*10 + root.val, sum);
+  return accu;
+};
+
+
