@@ -57,8 +57,8 @@ root.left = new TreeNode(-1);
 var rtn = isValidBST(root);
 console.log(rtn);
 /**
- * Method 2 Divide and conquer
- *
+ * Method 2 Divide and Conquer
+ * Subtree
  */
 // Traverse binary search tree in order
 var isValidBST = function(root) {
@@ -84,7 +84,22 @@ var isValidBST = function(root) {
   return helper(root)[0];
 };
 
-var root = new TreeNode(1);
-root.left = new TreeNode(1);
-var rtn = isValidBST(root);
-console.log(rtn);
+/**
+ * Method 3 Divide and Conquer
+ * Left and right
+ */
+var isValidBST = function(root) {
+  var helper = function(node, min, max) {
+    if (!node)
+      return true;
+    else if (node.left === null && node.right === null)
+      return node.val > min && node.val < max;
+    else if (node.left === null) 
+      return helper(node.right, node.val, max) && node.val > min;
+    else if (node.right === null)
+      return helper(node.left, min, node.val) && node.val < max;
+    else 
+      return helper(node.left, min, node.val) && helper(node.right, node.val, max);
+  };
+  return helper(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
+};
