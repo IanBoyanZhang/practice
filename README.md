@@ -1,7 +1,22 @@
 # toyProblems
 TODO: solve 144 iteratively
+
 TODO: solve 94 iteratively
+
 TODO: solve 145 iteratively
+
 98. Improved In-order traversal solution fails [0, -1] test case on leetcode 
 
 TODO: Review 95
+
+Advanced Tree?
+
+1. Trie
+
+2. Kd-tree
+
+3. B(+) tree
+
+4. Red-black tree
+
+5. AVL Tree
