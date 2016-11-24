@@ -7,6 +7,10 @@ TODO: solve 145 iteratively
 
 98. Improved In-order traversal solution fails [0, -1] test case on leetcode 
 
+Review: 
+
+114 Optimized solution
+
 TODO: Review 95
 
 Advanced Tree?
@@ -20,3 +24,8 @@ Advanced Tree?
 4. Red-black tree
 
 5. AVL Tree
+
+
+Issue:
+Possible ** compatiability issue in nodejs
+[Exponentiation operator](http://www.2ality.com/2016/02/exponentiation-operator.html)
