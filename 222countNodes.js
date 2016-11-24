@@ -121,15 +121,48 @@ var countNodes = function() {
   var ans = 0;
   var l, r;
   while(root) {
-    l = findDepth(node.left);
-    r = findDepth(node.right);
+    l = findDepth(root.left);
+    r = findDepth(root.right);
+
+    // http://www.cnblogs.com/mengwang024/p/4633722.html
+    // TODO: verify bit shifting
+    if (l === r) {
+      ans += 1 << l;
+      root = root.right;
+    } else {
+      ans += 1 << r;
+      root = root.left;
+    }
+  }
+  return ans;
+};
+
+// Why below is different?
+var countNodes = function(root) {
+  var ans = 0;
+  var l, r;
+  var node;
+  while(root) {
+    l = 0;
+    node = root;
+    while(node.left) {
+      l += 1;
+      node = node.left;
+    }
+
+    r = 0;
+    node = root;
+    while(node.right) {
+      r += 1;
+      node = node.left;
+    }
 
     if (l === r) {
       ans += 1 << l;
-      node = node.right;
+      root = root.right;
     } else {
       ans += 1 << r;
-      node = node.left;
+      root = root.left;
     }
   }
   return ans;
