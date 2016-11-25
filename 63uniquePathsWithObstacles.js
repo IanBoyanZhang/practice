@@ -13,14 +13,14 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
     brd[i][0] = 1;
     brd[i][n+1] = 1;
   }
-  for (i = 0; i < n+1; i+=1) {
+  for (i = 0; i < n + 2; i+=1) {
     brd[0][i] = 1;
     brd[m+1][i] = 1;
   }
 
   var cnt = 0;
   var dfs = function(x, y) {
-    if(brd[x+1][y+1] || obstacleGrid[x][y]) return;
+    if (brd[x+1][y+1] || obstacleGrid[x][y]) return;
     if (x === m - 1 && y === n - 1) return cnt+=1;
     brd[x+1][y+1] = 1;
     dfs(x, y+1);
