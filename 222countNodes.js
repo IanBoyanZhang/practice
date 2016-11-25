@@ -107,6 +107,8 @@ var countNodes = function(root) {
     return 2**(h-1) - 1 + c + 1;
 };
 
+// Optimization
+// http://blog.csdn.net/jmspan/article/details/51056085
 // Optimized solution from Han zichi
 var countNodes = function() {
   var findDepth = function(node) {

@@ -1,5 +1,4 @@
 // Can only move right and down
-
 var RobotPath = function(x, y) {
   'use strict';
   /*

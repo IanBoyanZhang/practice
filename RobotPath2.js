@@ -1,6 +1,6 @@
 // Can only move right and down
 //
-// Imagine certain spots are off limits, such that the robott cannot step on them. 
+// Imagine certain spots are off limits, such that the robott cannot step on them.
 // TODO: Research more path finding motion planning algorithms
 var RobotPath = function(x, y) {
   'use strict';
@@ -75,7 +75,7 @@ var RobotPath = function(x, y) {
     // start the recursion
     var newX = move(currX, currY, 0)[0];
     var newY = move(currX, currY, 0)[1];
-    
+
     if (placable(newX, newY)) {
       brd[newX][newY] = 1;
       step(newX, newY, path);
@@ -100,4 +100,6 @@ var RobotPath = function(x, y) {
 };
 
 console.log(RobotPath(3,3));
+
+console.log(RobotPath(1,2));
 
