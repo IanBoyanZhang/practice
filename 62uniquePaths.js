@@ -87,5 +87,6 @@ var uniquePaths = function(m, n) {
 console.log(uniquePaths(4, 3));
 console.log(uniquePaths(2, 3));
 console.log(uniquePaths(1, 1));
+console.log(uniquePaths(4, 4));
 
 // Now O(1) algo
