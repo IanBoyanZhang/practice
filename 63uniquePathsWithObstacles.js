@@ -18,6 +18,7 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
     brd[m+1][i] = 1;
   }
 
+  console.log(brd);
   var cnt = 0;
   var dfs = function(x, y) {
     if (brd[x+1][y+1] || obstacleGrid[x][y]) return;
@@ -25,8 +26,6 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
     brd[x+1][y+1] = 1;
     dfs(x, y+1);
     dfs(x+1, y);
-    dfs(x-1, y);
-    dfs(x, y-1);
     brd[x+1][y+1] = 0;
   };
   dfs(0, 0);
