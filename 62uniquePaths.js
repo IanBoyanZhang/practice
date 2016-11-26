@@ -63,6 +63,7 @@ var uniquePaths = function(m, n) {
 // Reuse arithmatic inspection
 // Utilize symmetric architecturec
 // Without swap
+// Solution: right down grid
 var uniquePaths = function(m, n) {
   var c = [];
   for (var i = 0; i < m; i+=1) {

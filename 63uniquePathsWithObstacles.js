@@ -39,6 +39,8 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
 
   var c = [];
   var v = 1;
+  // if there is one obstacle on path
+  // All future single tack path will be blocked
   for (var i = 0; i < m; i+=1) {
     c.push([]);
     if (obstacleGrid[i][0]) { c[i][0] = 0; v = 0; }
