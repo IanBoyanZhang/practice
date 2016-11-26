@@ -2,7 +2,7 @@
  * @param {number[][]} obstacleGrid
  * @return {number}
  */
-
+// Time limitied exceeded
 var uniquePathsWithObstacles = function(obstacleGrid) {
   var m = obstacleGrid.length;
   var n = obstacleGrid[0].length;
@@ -18,7 +18,6 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
     brd[m+1][i] = 1;
   }
 
-  console.log(brd);
   var cnt = 0;
   var dfs = function(x, y) {
     if (brd[x+1][y+1] || obstacleGrid[x][y]) return;
@@ -34,4 +33,29 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
 
 var r = uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]);
 // var r = uniquePathsWithObstacles([[0]]);
+// console.log(r);
+
+// TODO: deal with swap issue
+var uniquePathsWithObstacles = function(obstacleGrid) {
+  var o = obstacleGrid;
+  var m = o.length;
+  var n = o[0].length;
+
+  var c = [];
+  for (var i = 0; i<=m; i+=1) {
+    c.push([]);
+    c[i][0] = 1;
+    c[0][i] = 1;
+    if ( i < m && obstacleGrid[i][0]) c[i][0] = 0;
+    if ( i < n && obstacleGrid[0][i]) c[0][i] = 0;
+  }
+  for (i = 1; i < m; i+=1) {
+    for (j = 1; j < n; j+=1) {
+      if (obstacleGrid[i][j]) c[i][j] = 0;
+      else c[i][j] = c[i][j - 1] + c[i-1][j];
+    }
+  }
+  return c[m-1][n-1];
+};
+var r = uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]);
 console.log(r);

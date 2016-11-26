@@ -62,21 +62,16 @@ var uniquePaths = function(m, n) {
 // Thought: DP
 // Reuse arithmatic inspection
 // Utilize symmetric architecturec
+// Without swap
 var uniquePaths = function(m, n) {
-  if (m < n) {
-    var temp = m;
-    m = n;
-    n = temp;
-  }
   var c = [];
-  for (var i = 0; i <= m; i+=1) {
+  for (var i = 0; i < m; i+=1) {
     c.push([]);
     c[i][0] = 1;
-    c[0][i] = 1;
   }
-  c[0][0] = 1;
-  c[0][1] = 1;
-  c[1][0] = 1;
+  for (var j = 0; j < n; j+=1) {
+    c[0][j] = 1;
+  }
   for (i = 1; i < m; i+=1) {
     for (j = 1; j < n; j += 1) {
       c[i][j] = c[i][j - 1] + c[i-1][j];
@@ -84,9 +79,9 @@ var uniquePaths = function(m, n) {
   }
   return c[m-1][n-1];
 };
+
 console.log(uniquePaths(4, 3));
-console.log(uniquePaths(2, 3));
+console.log(uniquePaths(2, 4));
 console.log(uniquePaths(1, 1));
 console.log(uniquePaths(4, 4));
-
 // Now O(1) algo
