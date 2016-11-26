@@ -30,24 +30,24 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
   dfs(0, 0);
   return cnt;
 };
-
-var r = uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]);
 // var r = uniquePathsWithObstacles([[0]]);
 // console.log(r);
-
-// TODO: deal with swap issue
 var uniquePathsWithObstacles = function(obstacleGrid) {
   var o = obstacleGrid;
   var m = o.length;
   var n = o[0].length;
 
   var c = [];
-  for (var i = 0; i<=m; i+=1) {
+  var v = 1;
+  for (var i = 0; i < m; i+=1) {
     c.push([]);
-    c[i][0] = 1;
-    c[0][i] = 1;
-    if ( i < m && obstacleGrid[i][0]) c[i][0] = 0;
-    if ( i < n && obstacleGrid[0][i]) c[0][i] = 0;
+    if (obstacleGrid[i][0]) { c[i][0] = 0; v = 0; }
+    else c[i][0] = v;
+  }
+  v = 1;
+  for (var j = 0; j < n; j+=1) {
+    if (obstacleGrid[0][j]) { c[0][j] = 0; v = 0; }
+    else c[0][j] = v;
   }
   for (i = 1; i < m; i+=1) {
     for (j = 1; j < n; j+=1) {
@@ -59,3 +59,4 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
 };
 var r = uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]);
 console.log(r);
+// TODO: O(1)?
