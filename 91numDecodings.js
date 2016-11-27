@@ -20,27 +20,13 @@ var numDecodings = function(s) {
     var num = Number(s[l] + s[l+1]);
     if (l === len - 2) {
       if (s[l] === '0') return;
-      if (num > 26) {
-//        if (s[l+1] === '0') return;
-        return rec(s, l+1);
-      }
-/*      if (num === 20 || num === 10) {
-        return cnt+=1;
-      }*/
-      rec(s, l+1);
-      return cnt+=1;
+      if (num <= 26) cnt+=1;
+      return rec(s, l+1);
     }
 
     if (s[l] === '0') return;
-    if (num > 26) {
-//      if (s[l+1] === '0') return;
-      return rec(s, l+1);
-    }
-/*    if (num === 20 || num === 10) {
-      return rec(s, l+2);
-    }*/
+    if (num <= 26) rec(s, l+2);
     rec(s, l+1);
-    rec(s, l+2);
   };
 
   rec(s, 0);
