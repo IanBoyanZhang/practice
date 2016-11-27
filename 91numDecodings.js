@@ -10,12 +10,10 @@ var numDecodings = function(s) {
   var len = s.length;
   if (len === 0) return cnt;
   var rec = function(s, l) {
-    // base conidtion
     if (s[l] === '0') return;
     if (l === len - 1) return cnt+=1;
     var num = Number(s[l] + s[l+1]);
     if (l === len - 2) {
-//      if (s[l] === '0') return;
       if (num <= 26) cnt+=1;
       return rec(s, l+1);
     }
@@ -49,3 +47,23 @@ console.log(rtn);
 var string = "9371597631128776948387197132267188677349946742344217846154932859125134924241649584251978418763151253";
 rtn = numDecodings(string);
 console.log(rtn);
+
+
+// Second attempt
+var numDecodings = function(s) {
+  var rec = function(s, l, cnt, len) {
+    if (len === 0) return 0;
+    if (s[l] === '0') return;
+    if (l === len - 1) return cnt+=1;
+    var num = Number(s[l] + s[l+1]);
+    if (l === len - 2) {
+      if (num <= 26) cnt+=1;
+      return rec(s, l+1) + cnt;
+    }
+
+    if (num <= 26) cnt += rec(s, l+2);
+    return rec(s, l+1) + cnt;
+  };
+
+  return rec(s, 0, 0, s.length);
+};
