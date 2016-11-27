@@ -11,20 +11,15 @@ var numDecodings = function(s) {
   if (len === 0) return cnt;
   var rec = function(s, l) {
     // base conidtion
-    if (l === len - 1) { 
-      if (s[l] !== '0') {
-        return cnt+=1;
-      }
-      return;
-    }
+    if (s[l] === '0') return;
+    if (l === len - 1) return cnt+=1;
     var num = Number(s[l] + s[l+1]);
     if (l === len - 2) {
-      if (s[l] === '0') return;
+//      if (s[l] === '0') return;
       if (num <= 26) cnt+=1;
       return rec(s, l+1);
     }
 
-    if (s[l] === '0') return;
     if (num <= 26) rec(s, l+2);
     rec(s, l+1);
   };
