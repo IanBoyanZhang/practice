@@ -113,3 +113,26 @@ console.log(rtn);
 var string = '230';
 rtn = numDecodings(string);
 console.log(rtn);
+
+var numDecodings = function(s) {
+  if (!Number(s[0])) return 0;
+
+  var len = s.length, dp = [[]];
+  dp[0][0] = 1;
+  dp[0][1] = 1;
+  var i = 1;
+  for (; i < len; i+=1) {
+    dp[i] = [];
+    dp[i][0] = dp[i-1][1];
+    dp[i][1] = 0;
+
+    if (s[1] !== '0') dp[i][1] += dp[i-1][1];
+    if (s[i - 1] !== '0') {
+      var num = Number(s[i-1] + s[i]);
+//      if (num >=1 && num <= 26)
+      if (num >=10 && num <= 26)
+        dp[i][1] += dp[i-1][0];
+    }
+  }
+  return dp[len-1][1];
+};
