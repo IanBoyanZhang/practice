@@ -31,6 +31,25 @@ Advanced Tree?
 5. AVL Tree
 
 
-Issue:
+### Issue:
 Possible ** compatiability issue in nodejs
 [Exponentiation operator](http://www.2ality.com/2016/02/exponentiation-operator.html)
+
+
+### Category:
+Tree
+Dynamic Programming
+Backtracking
+
+
+### Learning resource
+[Stanford Intro to Programming Contests](http://web.stanford.edu/class/cs97si/)
+
+#### Dynamic Programming
+[Dynamic Programming](http://web.stanford.edu/class/cs97si/04-dynamic-programming.pdf)
+
+[Fibanacci Sequence with matrices](http://math.stackexchange.com/questions/784710/how-to-prove-fibonacci-sequence-with-matrices)
+
+TO READ:
+[DP: Do novice to advanced](http://www.hawstein.com/posts/dp-novice-to-advanced.html)
+[Original TopCoder Article entry](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
