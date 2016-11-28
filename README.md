@@ -16,6 +16,8 @@ TODO: Review 95
 TODO: 62unique path O(1) solution
 Permutation
 
+TODO: 91numDecodings optimized solution
+
 Advanced Tree?
 
 1. Trie

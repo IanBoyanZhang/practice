@@ -49,7 +49,7 @@ var string = "937159763112877694838719713226718867734994674234421784615493285912
 rtn = numDecodings(string);
 console.log(rtn);*/
 
-// Third attempt O(n)
+// Third attempt O(n) time O(1) space
 // Fibonacci DP
 var numDecodings = function(s) {
   var c = [0, 1], i = 2;
