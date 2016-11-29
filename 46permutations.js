@@ -7,7 +7,7 @@
 
 var permute = function(nums) {
   var len = nums.length;
-  if (len <= 1) { return nums; }
+  if (len <= 1) { return [nums]; }
 
   var recurse = function(n, arr) {
     if (n === 2) {
@@ -31,5 +31,28 @@ var permute = function(nums) {
   return recurse(len, nums);
 };
 
-console.log(permute([1, 2]));
-console.log(permute([1, 2, 3]));
+/*console.log(permute([1, 2]));
+console.log(permute([1, 2, 3]));*/
+
+// 11/29 second pass
+var permute = function(nums) {
+  var ans = [], res = [], hash = [], len = nums.length;
+  var dfs = function(num, nums) {
+    if (num === len) {
+      return ans.push(res.map(function(item) {
+        return item;
+      }));
+    }
+    for (var i = 0; i<len; i+=1) {
+      if (hash[i]) continue;
+      hash[i] = true;
+      res.push(nums[i]);
+      dfs(num + 1, nums);
+      hash[i] = false;
+      res.pop();
+    }
+  };
+
+  dfs(0, nums);
+  return ans;
+};
