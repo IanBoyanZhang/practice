@@ -47,9 +47,33 @@ Backtracking
 
 #### Dynamic Programming
 [Dynamic Programming](http://web.stanford.edu/class/cs97si/04-dynamic-programming.pdf)
+Problem covered
+1. 2-D DP
+LCS
+
+2. Given a string x = x1....n, find the minimum number of characters that need to be inserted to make it a palindrome
+
+Alternate solution
+Reverse x to get x^R
+
+The answer is n-L where L is the length of the LCS of x and x^R
+
+[Dynamic programming and state machine](http://liam0205.me/2016/05/13/dynamic-programming-and-state-machine/)
+
 
 [Fibanacci Sequence with matrices](http://math.stackexchange.com/questions/784710/how-to-prove-fibonacci-sequence-with-matrices)
 
 TO READ:
 [DP: Do novice to advanced](http://www.hawstein.com/posts/dp-novice-to-advanced.html)
 [Original TopCoder Article entry](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
+
+
+### Finite Automata
+[String Pattern Matching with Finite Automata Youtube](https://www.youtube.com/watch?v=kuMuFu9IRtw)
+
+
+## Learning Strategy
+[How does one become good at solving algorithms programming problems](https://www.quora.com/How-does-one-become-good-at-solving-algorithm-programming-problems)
+
+# Advanced algorithms
+KMP for substring searching and matching
