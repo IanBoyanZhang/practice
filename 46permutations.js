@@ -57,4 +57,56 @@ var permute = function(nums) {
   return ans;
 };
 
-console.log(permute([1, 1, 2]));
+// http://blog.csdn.net/happyaaaaaaaaaaa/article/details/51534048
+// console.log(permute([1, 1, 2]));
+// dfs with swap
+// without requirement to maintain temporary backtracking array
+// It seems without using global result container. The code runs faster
+var permute = function(nums){
+  var swap = function(nums, m, n) {
+    var temp = nums[m];
+    nums[m] = nums[n];
+    nums[n] = temp;
+  };
+
+  var dfs = function(res, nums, j) {
+    // base
+    if (j === nums.length) {
+      res.push(nums.slice());
+      return res;
+    }
+
+    for (var i = j; i < nums.length; i +=1 ) {
+      swap(nums, i, j);
+      dfs(res, nums, j+1);
+      swap(nums, j, i);
+    }
+    return res;
+  };
+  return dfs([], nums, 0);
+};
+// console.log(permute([1, 2 ,3]));
+
+// Non-recursive implementation
+// slice O(N)
+// splice (N - id)?
+var permute = function(nums) {
+  var res = [], first = [];
+  first.push(nums[0]);
+  res.push(first);
+  var newRes;
+  for (var i = 1; i < nums.length; i+=1) {
+    newRes = [];
+    for (var j = 0; j < res.length; j+=1) {
+      var size = res[j].length + 1;
+      for (var k = 0; k < size; k+=1) {
+        var itm =  res[j].slice();
+        itm.splice(k, 0, nums[i]);
+        newRes.push(itm);
+      }
+    }
+    res = newRes.slice();
+  }
+  return res;
+};
+console.log(permute([1, 2 ,3]));
