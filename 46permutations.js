@@ -56,3 +56,5 @@ var permute = function(nums) {
   dfs(0, nums);
   return ans;
 };
+
+console.log(permute([1, 1, 2]));
