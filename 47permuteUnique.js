@@ -83,6 +83,50 @@ var permuteUnique = function(nums) {
   return r;
 };
 
-console.log(permuteUnique([1, 1, 2, 1]));
-console.log(permuteUnique([1, 2, 3]));
+// console.log(permuteUnique([1, 1, 2, 1]));
+// console.log(permuteUnique([1, 2, 3]));
 // console.log(permuteUnique([1]));
+
+
+// new solution based on swap
+
+var permute = function(nums) {
+  var nums_dup = nums.slice();
+  var res = [];
+  var swap = function(arr, m, n) {
+    var temp = arr[m];
+    arr[m] = arr[n];
+    arr[n] = temp;
+  };
+
+  var contain_duplicate = function(arr, start, end) {
+    for (var i = start; i < end; i+=1) {
+      if(arr[i] === arr[end]) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  var dfs = function(nums, l, res) {
+    // base
+    if (l === nums.length) {
+      res.push(nums.slice());
+      return res;
+    }
+    var hash = [];
+    for (var i = l; i < nums.length; i+=1) {
+      if (contain_duplicate(nums, l, i)) { continue; }
+      hash.push(nums[i]);
+      swap(nums, i, l);
+      dfs(nums, l+1, res);
+      swap(nums, l, i);
+    }
+    return res;
+  };
+  return dfs(nums_dup, 0, []);
+};
+
+var arr = [1, 1, 1, 2];
+var rtn = permute(arr);
+console.log(rtn);
