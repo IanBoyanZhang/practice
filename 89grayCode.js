@@ -71,5 +71,14 @@ var grayCode = function(n) {
   return res;
 };
 
+// solution
+var grayCode = function(n) {
+  var ans = [];
+  for (var i = 0; i < (1 << n); i+=1) {
+    ans[i] = i^(i >> 1);
+  }
+  return ans;
+};
+
 var rtn = grayCode(3);
 console.log(rtn);
