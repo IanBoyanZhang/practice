@@ -9,7 +9,7 @@
 // How to control the iteration
 // https://tenderleo.gitbooks.io/leetcode-solutions-/content/GoogleMedium/77.html
 var combine = function(n, k) {
-  var res = [], hash = [];
+  var res = [];
   var dfs = function(next, cons, l) {
     // base condition
     if (l === k) {
@@ -25,6 +25,13 @@ var combine = function(n, k) {
   dfs(1, [], 0);
   return res;
 };
+
+/*var combine = function(n, k) {
+  var res = [];
+  for (var i = 1; i < k; i+=1) {
+  
+  }
+};*/
 // var rtn = combine(3, 2);
 var rtn = combine(5, 5);
 var rtn = combine(4, 4);
