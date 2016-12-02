@@ -36,6 +36,20 @@ Advanced Tree?
 
 5. AVL Tree
 
+TODO: sort
+1. quick sort
+2. heap sort
+3. merge sort
+4. k sort?
+5. radix sort
+6. insertion sort
+
+TODO:
+tail call
+optimization
+space?
+large-scale system
+distributed system
 
 ### Issue:
 Possible ** compatiability issue in nodejs
