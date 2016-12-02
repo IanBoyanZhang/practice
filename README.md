@@ -66,6 +66,8 @@ Sort
 Graph
 
 ### Learning resource
+[Computer Science in JavaScript](https://github.com/nzakas/computer-science-in-javascript)
+
 [Stanford Intro to Programming Contests](http://web.stanford.edu/class/cs97si/)
 
 #### Dynamic Programming
