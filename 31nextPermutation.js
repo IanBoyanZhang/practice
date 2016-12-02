@@ -6,6 +6,7 @@
 
 // https://en.wikipedia.org/wiki/Permutation
 // Wikipedia permutatino algorithm
+// https://discuss.leetcode.com/topic/15216/a-simple-algorithm-from-wikipedia-with-c-implementation-can-be-used-in-permutations-and-permutations-ii
 // Generation in lexicographic order
 var nextPermutation = function(nums) {
   var swap = function(arr, m, n) {
