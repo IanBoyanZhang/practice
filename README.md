@@ -47,6 +47,8 @@ Tree
 Dynamic Programming
 Backtracking
 
+Sort
+Graph
 
 ### Learning resource
 [Stanford Intro to Programming Contests](http://web.stanford.edu/class/cs97si/)
