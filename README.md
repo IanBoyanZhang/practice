@@ -22,6 +22,8 @@ TODO: 77 iterative solution
 
 TODO: 89 Review bitwise gray code solution
 
+TODO: [Permutation Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm)
+
 Advanced Tree?
 
 1. Trie
