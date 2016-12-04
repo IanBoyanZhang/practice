@@ -34,6 +34,7 @@ var divide = function(dividend, divisor) {
 
 // Seems 0/0 is not in test case
 // Still Time Limited Exceeded
+// https://discuss.leetcode.com/topic/15568/detailed-explained-8ms-c-solution
 var divide = function(dividend, divisor) {
   var MAX_POSITIVE_INT = ~(1 << 31);
   var MAX_NEGATIVE_INT = 1 << 31;
