@@ -38,6 +38,8 @@ Advanced Tree?
 
 5. AVL Tree
 
+6. Heap
+
 TODO: sort
 1. quick sort
 2. heap sort
