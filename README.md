@@ -96,6 +96,9 @@ TO READ:
 [DP: Do novice to advanced](http://www.hawstein.com/posts/dp-novice-to-advanced.html)
 [Original TopCoder Article entry](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
 
+####
+TO READ:
+[The Two Pointer Algorithm](https://tp-iiita.quora.com/The-Two-Pointer-Algorithm)
 
 ### Finite Automata
 [String Pattern Matching with Finite Automata Youtube](https://www.youtube.com/watch?v=kuMuFu9IRtw)
