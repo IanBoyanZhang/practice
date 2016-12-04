@@ -38,10 +38,9 @@ var divide = function(dividend, divisor) {
 var divide = function(dividend, divisor) {
   var MAX_POSITIVE_INT = ~(1 << 31);
   var MAX_NEGATIVE_INT = 1 << 31;
-  if (!dividend || !divisor) { return; }
-//  if (!divisor || (dividend === MAX_NEGATIVE_INT && divisor === -1)) {
-//    return MAX_POSITIVE_INT;
-//  }
+  if (!divisor || (dividend === MAX_NEGATIVE_INT && divisor === -1)) {
+    return MAX_POSITIVE_INT;
+  }
   var sign = ((dividend < 0)^(divisor < 0)) ? -1 : 1;
   var dvd = Math.abs(dividend);
   var dvs = Math.abs(divisor);
