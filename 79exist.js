@@ -60,30 +60,98 @@ var exist = function(board, word) {
 
 var b = ["ABCE",
          "SFCS",
-         "ADEE"]
+         "ADEE"];
 var w = "ABCCED";
-// var b = ["a"]
-// var w = "b";
-// var b = ["a"];
-// var w = "a";
-// var b = ["aa"];
-// var w = "aaa";
-// var b = ["aa"];
-// var w = "aa";
-// var b = ["ab",
-//          "cd"];
-// var w = "cdba";
+var b = ["a"];
+var w = "b";
+var b = ["a"];
+var w = "a";
+var b = ["aa"];
+var w = "aaa";
+var b = ["aa"];
+var w = "aa";
+var b = ["ab",
+         "cd"];
+var w = "cdba";
 
-// var b = ["aaa",
-//          "abb",
-//          "abb",
-//          "bbb",
-//          "bbb",
-//          "aaa",
-//          "bbb",
-//          "abb",
-//          "aab",
-//          "aba"];
-// var w = "aabaaaabbb";
+var b = ["aaa",
+         "abb",
+         "abb",
+         "bbb",
+         "bbb",
+         "aaa",
+         "bbb",
+         "abb",
+         "aab",
+         "aba"];
+var w = "aabaaaabbb";
 var rtn = exist(b, w);
 console.log(rtn);
+
+
+/**
+ * @param {character[][]} board
+ * @param {string} word
+ * @return {boolean}
+ */
+var exist = function(board, word) {
+
+  var f;
+  var hash;
+  var r;
+  var c;
+
+  // reset hash array
+  function clear() {
+    hash = [];
+    for (var i = 0; i < r; i++)
+      hash[i] = [];
+  }
+
+  function dfs(x, y, word, index, board) {
+    if (index > wl) return;
+    if (f)
+      return;
+
+    if (index === word.length) {
+      f = true;
+      return;
+    }
+
+    var dir = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+    for (var i = 0; i < 4; i++) {
+      var _x = x + dir[i][0];
+      var _y = y + dir[i][1];
+      if (_x < 0 || _x >= r || _y < 0 || _y >=c)
+        continue;
+      var item = board[_x][_y];
+      if (hash[_x][_y] || item !== word[index])
+        continue;
+      hash[_x][_y] = true;
+      dfs(_x, _y, word, index + 1, board);
+      hash[_x][_y] = false;
+    }
+  }
+
+  var wl = word.length;
+  if (wl === 0) return true;
+
+  r = board.length;
+  if (!r) return false;
+  c = board[0].length;
+
+  for (var i = 0; i < r; i++)
+    for (var j = 0; j < c; j++) {
+      var item = board[i][j];
+      if (item !== word[0])
+        continue;
+      f = false;
+      clear();
+      hash[i][j] = true;
+      dfs(i, j, word, 1, board);
+      if (f)
+        return true;
+    }
+
+  return false;
+};

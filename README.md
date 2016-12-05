@@ -29,6 +29,7 @@ TODO: Optimize 78 solution
 TODO: Review 3, 5
 [Manacher’s algorithm](http://articles.leetcode.com/longest-palindromic-substring-part-ii/)
 
+TODO: Rewrite 79 from scratch
 Advanced Tree?
 
 1. Trie
