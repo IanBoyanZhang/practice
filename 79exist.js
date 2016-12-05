@@ -88,7 +88,6 @@ var w = "aabaaaabbb";
 var rtn = exist(b, w);
 console.log(rtn);
 
-
 /**
  * @param {character[][]} board
  * @param {string} word
@@ -140,15 +139,16 @@ var exist = function(board, word) {
   if (!r) return false;
   c = board[0].length;
 
+  clear();
+  f = false;
   for (var i = 0; i < r; i++)
     for (var j = 0; j < c; j++) {
       var item = board[i][j];
       if (item !== word[0])
         continue;
-      f = false;
-      clear();
       hash[i][j] = true;
       dfs(i, j, word, 1, board);
+      hash[i][j] = false;
       if (f)
         return true;
     }
