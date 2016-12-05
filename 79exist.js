@@ -127,7 +127,8 @@ var exist = function(board, word) {
       if (hash[_x][_y] || item !== word[index])
         continue;
       hash[_x][_y] = true;
-      dfs(_x, _y, word, index + 1, board);
+      // Once find, trim other branches
+      f || dfs(_x, _y, word, index + 1, board);
       hash[_x][_y] = false;
     }
   }
