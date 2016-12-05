@@ -14,6 +14,7 @@ var lengthOfLongestSubstring = function(s) {
     } else {
       // item in substring
       // for second ptr start to catch up
+      // reset catch
       for(;;){
         console.log(start);
         if (s[start] === item) {

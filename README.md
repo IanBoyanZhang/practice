@@ -26,6 +26,8 @@ TODO: [Permutation Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algo
 
 TODO: Optimize 78 solution
 
+TODO: Review 3, 5
+
 Advanced Tree?
 
 1. Trie
