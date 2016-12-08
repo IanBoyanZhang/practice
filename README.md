@@ -5,9 +5,9 @@ TODO: solve 94 iteratively
 
 TODO: solve 145 iteratively
 
-98. Improved In-order traversal solution fails [0, -1] test case on leetcode 
+98. Improved In-order traversal solution fails [0, -1] test case on leetcode
 
-Review: 
+Review:
 
 114 Optimized solution
 
@@ -28,6 +28,9 @@ TODO: Optimize 78 solution
 
 TODO: Review 3, 5
 [Manacher’s algorithm](http://articles.leetcode.com/longest-palindromic-substring-part-ii/)
+
+TODO: 146 LRU
+TODO: expand LFU cache
 
 TODO: Rewrite 79 from scratch
 Advanced Tree?

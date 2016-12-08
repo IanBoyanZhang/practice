@@ -1,3 +1,12 @@
+// References
+// Yet another javascript solution
+// https://github.com/chihungyu1116/leetcode-javascript/blob/master/146%20LRU%20Cache.js
+// A real world implementation
+// https://github.com/monsur/jscache/blob/master/cache.js
+// Doubly Linked List
+// https://github.com/nzakas/computer-science-in-javascript/blob/master/data-structures/doubly-linked-list/doubly-linked-list.js
+// Java Solution
+// http://www.programcreek.com/2013/03/leetcode-lru-cache-java/
 // Node
 var Node = function(key, val) {
   this.next = null;
