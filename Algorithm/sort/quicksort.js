@@ -1,6 +1,6 @@
 /**
  * description
- *
+ * Divide and conquer
  */
 // https://en.wikipedia.org/wiki/Quicksort
 // Quick reference to different partition scheme
@@ -14,7 +14,7 @@ var swap = function(A, a, b) {
   A[b] = tmp;
 };
 
-// Scheme 1:Lomuto partition scheme 
+// Scheme 1:Lomuto partition scheme
 var partition = function(nums, p, r) {
   var pivot = nums[r];
   var i = p,  j = p;
