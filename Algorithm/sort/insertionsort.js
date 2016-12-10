@@ -6,7 +6,6 @@ var insertionsort = function(items) {
   for (i=0; i<len; i+=1) {
     // store the current value because it may shift later
     value = items[i];
-    console.log(value);
     /**
      * whenever the value is in the sorted section is greater than the value
      * in the unsorted section, shift all items in the sorted section over
@@ -24,3 +23,18 @@ var insertionsort = function(items) {
 
 var arr = [6, 3, 5, 4, 2, 7, 1];
 console.log(insertionsort(arr));
+
+// insertion sort is stable
+var insertionsort = function(items){
+  var len = items.length;
+  var value, i, j;
+  for(i=0; i<len; i+=1) {
+    value = items[i];
+    // now shifting
+    for(j=i-1;j>1 && items[j] > value; j--) {
+      items[j+1] = items[j];
+    }
+    items[j+1] = value;
+  } 
+  return items;
+};

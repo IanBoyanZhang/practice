@@ -25,3 +25,6 @@ Divide and conquer: Mergesort, Quicksort
 
 ## Real world implementation
 when element is less than 10, insertion sort is used
+
+## Stability
+Stable: insertion sort
