@@ -21,20 +21,21 @@ var insertionsort = function(items) {
   return items;
 };
 
-var arr = [6, 3, 5, 4, 2, 7, 1];
-console.log(insertionsort(arr));
-
-// insertion sort is stable
-var insertionsort = function(items){
+var insertionsort = function(items) {
   var len = items.length;
   var value, i, j;
-  for(i=0; i<len; i+=1) {
+  for (i = 1; i < len; i+=1) {
     value = items[i];
-    // now shifting
-    for(j=i-1;j>1 && items[j] > value; j--) {
-      items[j+1] = items[j];
+    for (j = i; j > 0 && items[j - 1] > value; j-=1) {
+      items[j] = items[j-1];
     }
-    items[j+1] = value;
-  } 
+    items[j] = value;
+  }
   return items;
 };
+
+// insertion sort is stable
+var a = [6, 3, 5, 4, 2, 7, 1];
+console.log(insertionsort(a));
+
+
