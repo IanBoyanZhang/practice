@@ -28,3 +28,4 @@ when element is less than 10, insertion sort is used
 
 ## Stability
 Stable: insertion sort
+Unstable: shell sort
