@@ -29,3 +29,8 @@ when element is less than 10, insertion sort is used
 ## Stability
 Stable: insertion sort
 Unstable: shell sort, heap sort (swap based)
+
+## 
+
+Concise chinese introduction to heapsort
+[Heapsort](http://liuyu314.github.io/algorithm/2013/10/22/heapsort/)
