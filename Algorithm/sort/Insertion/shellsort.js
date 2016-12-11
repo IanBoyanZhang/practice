@@ -19,8 +19,10 @@ var shell_sort = function(arr) {
 var shell_sort = function(arr) {
   var len = arr.length;
   for (var h = parseInt(len/2);h>=1; h = parseInt(h/2)) {
+    // iterate starting point
     for (var i = h; i < len; i+=1) {
       var k = arr[i];
+      // Vertical traversal
       for (var j = i; j >=h && k < arr[j-h]; j -= h) {
         arr[j] = arr[j-h];
       }

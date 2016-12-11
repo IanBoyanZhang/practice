@@ -14,7 +14,7 @@ Insertion sorts: Shellsort
 Merge sorts: Mergesort
 Distribution sorts: Bucket sort, Radix sort, counting sort
 Concurrent sorts:
-Hybrid sorts: Block merge sort, Timsort
+Hybrid sorts: Block merge sort, Timsort, introsort
 Other: Topological sorting ...
 
 
@@ -28,4 +28,4 @@ when element is less than 10, insertion sort is used
 
 ## Stability
 Stable: insertion sort
-Unstable: shell sort
+Unstable: shell sort, heap sort (swap based)
