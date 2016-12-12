@@ -1,4 +1,4 @@
-# toyProblems
+#
 TODO: solve 144 iteratively
 
 TODO: solve 94 iteratively
@@ -116,3 +116,8 @@ TO READ:
 
 # Advanced algorithms
 KMP for substring searching and matching
+
+### Problem categories
+
+#### Tree
+[Tree related problems (Chinese)](http://blog.csdn.net/tiandawenwu/article/details/19916005)
