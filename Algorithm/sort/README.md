@@ -47,3 +47,7 @@ Practice improved heapsort/(fast heapsort)
 
 ##
 [Why is quicksort so quick(Chinese)](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/)
+
+## CLRS
+
+The decision Tree model of sorting
