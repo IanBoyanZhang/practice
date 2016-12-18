@@ -121,3 +121,32 @@ KMP for substring searching and matching
 
 #### Tree
 [Tree related problems (Chinese)](http://blog.csdn.net/tiandawenwu/article/details/19916005)
+
+
+#### Bit
+
+[Seander bit hacks](https://graphics.stanford.edu/~seander/bithacks.html)
+
+Khan 4019
+[Front end Interview questions](https://github.com/khan4019/front-end-Interview-Questions)
+
+
+#### Other
+
+[Coding horror Fisher Yates random shuffling](https://blog.codinghorror.com/the-danger-of-naivete/)
+
+##### Hashtable
+
+Extensive reading about hash table
+[Hashtables pigeonholes and birthdays](https://blog.codinghorror.com/hashtables-pigeonholes-and-birthdays/)
+
+## Architecture
+
+Redis source code reading
+[Github hosted redis source](https://github.com/antirez/redis/tree/unstable/src)
+
+[How to read redis source-code (Chinese)](https://github.com/huangz1990/blog/blob/master/diary/2014/how-to-read-redis-source-code.rst)
+
+
+## TODO:
+Implemente promise, yield and other functional meme
