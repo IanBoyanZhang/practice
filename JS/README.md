@@ -29,3 +29,5 @@ will have a constructor property that points to the fundamental Object construct
 
 
 #### Changing the constructor of an object
+
+How to modify constructor value of generic objects.

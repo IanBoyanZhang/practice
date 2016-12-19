@@ -127,6 +127,8 @@ KMP for substring searching and matching
 
 [Seander bit hacks](https://graphics.stanford.edu/~seander/bithacks.html)
 
+[Detect integer overflow](http://www.sigmainfy.com/blog/detect-integer-overflow.html)
+
 Khan 4019
 [Front end Interview questions](https://github.com/khan4019/front-end-Interview-Questions)
 
