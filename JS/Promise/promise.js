@@ -3,7 +3,7 @@ var FUFILLEED = 1;
 var REJECTED = 2;
 
 // State machine
-function Promise() {
+function Promise(fn) {
   // Store state which can be PENDING, FULFILLED or REJECTED
   var state = PENDING;
   // Store value or error once FULFILLED or REJECTED
@@ -62,7 +62,6 @@ function Promise() {
 /**
  * Check if a value is a Promise and, if it is,
  * return the 'then' method of that promise
- *
  * @param
  */
 function getThen(value) {
@@ -104,4 +103,6 @@ function doResolve(fn, onFulfilled, onRejected) {
 }
 
 // Observing (via done)
+var p = new Promise(function() {
 
+});

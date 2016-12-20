@@ -27,7 +27,7 @@ function doResolve(fn, onFulfilled, onRejected) {
       if (done) return;
       done = true;
       onFulfilled(value);
-    }, function(value) {
+    }, function(reason) {
       if (done) return;
       done = true;
       onRejected(reason);
@@ -46,52 +46,71 @@ var Promise = function(fn) {
   var REJECTED = 2;
   this.state = PENDING;
   this.value = null;
+  value = null;
 
   var self = this;
   function fulfill(result) {
     self.state = FULFILLED;
-    self.value = result;
+//    self.value = result;
+    value = result;
   }
 
   function reject(reason) {
     self.state = REJECTED;
-    self.value = reason;
+//    self.value = reason;
+    value = result;
   }
+  
+  this.handlers = [];
 
-  function handle(handler) {
-    if (state === PENDING) {
-      return handlers.push(handler);
+  
+  this.handle = function(handler) {
+    if (self.state === PENDING) {
+//      console.log("Chage state to ", self.state);
+      self.handlers.push(handler);
+      return;
     }
-    var t = typeof handler;
-    if (state === FULFILLED && t === 'function') {
-      handler.onFulFilled(value);
+  
+    if (self.state === FULFILLED && typeof handler.onFulfilled === 'function') {
+//      console.log("Chage state to ", self.state);
+//      handler.onFulfilled(this.value);
+      handler.onFulfilled(value);
     }
-    if (state === REJECTED && t === 'function') {
-      hanlder.onRejected(value);
+    if (self.state === REJECTED && typeof handler.onRejected === 'function') {
+//      console.log("Chage state to ", self.state);
+//      handler.onRejected(this.value);
+      handler.onRejected(value);
     }
-  }
+  };
 
-  doResolve(fn, fulfill, reject);
+  this.done = function(onFulfilled, onRejected) {
+  var self = this;
+  // ensure we are always asynchronou
+    setTimeout(function() {
+      self.handle({
+        onFulfilled: onFulfilled,
+        onRejected: onRejected
+      });
+    }, 0);
 };
 
+
+  doResolve(fn, fulfill, reject);
+  // for chaining
+  return this;
+};
 
 // test
 //
 var P = new Promise(function(resolve, reject) {
   resolve(5);
 });
-console.log(P.state);
-console.log(P.value);
+// console.log(P.state);
+// console.log(P.value);
 
-
-Promise.prototype.done = function(onFulfilled, onRejected) {
-  // ensure we are always asynchronous
-  setTimeout(function () {
-    setTimeout(function() {
-      handler({
-        onFulfilled: onFulfilled,
-        onRejected: onRejected
-      });
-    });
-  }, 0);
-};
+// test
+P.done(function(value) {
+  console.log("onFulfilled: ", value);
+}, function(reason) {
+  console.log("onRejected: ", reason);
+});
