@@ -58,6 +58,19 @@ var Promise = function(fn) {
     self.value = reason;
   }
 
+  function handle(handler) {
+    if (state === PENDING) {
+      return handlers.push(handler);
+    }
+    var t = typeof handler;
+    if (state === FULFILLED && t === 'function') {
+      handler.onFulFilled(value);
+    }
+    if (state === REJECTED && t === 'function') {
+      hanlder.onRejected(value);
+    }
+  }
+
   doResolve(fn, fulfill, reject);
 };
 
@@ -69,3 +82,16 @@ var P = new Promise(function(resolve, reject) {
 });
 console.log(P.state);
 console.log(P.value);
+
+
+Promise.prototype.done = function(onFulfilled, onRejected) {
+  // ensure we are always asynchronous
+  setTimeout(function () {
+    setTimeout(function() {
+      handler({
+        onFulfilled: onFulfilled,
+        onRejected: onRejected
+      });
+    });
+  }, 0);
+};

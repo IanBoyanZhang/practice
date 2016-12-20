@@ -31,3 +31,20 @@ will have a constructor property that points to the fundamental Object construct
 #### Changing the constructor of an object
 
 How to modify constructor value of generic objects.
+
+
+
+### Event system
+
+#### setTimeout 0
+[What does setTimeout with a 0ms delay do?](https://www.quora.com/What-does-setTimeout-with-a-0ms-delay-do)
+
+Runs as soon as the stack unwinds. It's a useful trick for executing asynchronous code in a single thread. The coder's algorithm is non-blocking and asynchronous, 
+but it's execution is blocked into an efficient, linear sequence
+
+[Why is setTimeout fn 0 sometimes useful](http://stackoverflow.com/questions/779379/why-is-settimeoutfn-0-sometimes-useful)
+
+[How javascript timers work](http://ejohn.org/blog/how-javascript-timers-work/)
+
+[Why are some javascript developers using settimeout](http://stackoverflow.com/questions/12051769/why-are-some-javascript-developers-using-settimeout-for-one-millisecond?noredirect=1&lq=1)
+Looping back to give control back to Javascript engine

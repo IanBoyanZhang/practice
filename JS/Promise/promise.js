@@ -35,6 +35,29 @@ function Promise() {
       reject(e);
     }
   }
+
+  function handle(handler) {
+    if (state === PENDING) {
+      handlers.push(handler);
+    } else {
+      if (state === FULFILLED && typeof handler.onFulfilled === 'function') {
+        handler.onFulfilled(value);
+      }
+      if (state === REJECTED && typeof handler.onRejected === 'function') {
+        handler.onRejected(value);
+      }
+    }
+  }
+
+  this.done = function (onFulfilled, onRejected) {
+    // ensure we are always asynchronous
+    setTimeout(function() {
+      handle({
+        onFulfilled: onFulfilled,
+        onRejected: onRejected
+      });
+    }, 0);
+  };
 }
 /**
  * Check if a value is a Promise and, if it is,
@@ -79,4 +102,6 @@ function doResolve(fn, onFulfilled, onRejected) {
     onRejected(ex);
   }
 }
+
+// Observing (via done)
 
