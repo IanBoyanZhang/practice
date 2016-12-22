@@ -2,6 +2,9 @@
  * @param {number[][]} nums
  * @return {number[][]}
  */
+
+// https://en.wikipedia.org/wiki/3SUM
+// http://www.cnblogs.com/Liok3187/p/4540921.html
 // Two pointers
 var threeSum = function(nums) {
   var NUMS = nums.sort(function(a, b) {
@@ -24,7 +27,7 @@ var threeSum = function(nums) {
       var c = NUMS[end];
       if (a + b + c === 0) {
         res.push([a, b, c]);
-        // Skip duplicated
+        // Skip duplicated consecutive elements
         while( start < end && NUMS[start] === NUMS[start + 1]) {
           start += 1;
         }
