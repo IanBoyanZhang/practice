@@ -48,3 +48,9 @@ but it's execution is blocked into an efficient, linear sequence
 
 [Why are some javascript developers using settimeout](http://stackoverflow.com/questions/12051769/why-are-some-javascript-developers-using-settimeout-for-one-millisecond?noredirect=1&lq=1)
 Looping back to give control back to Javascript engine
+
+
+### Extra
+
+#### Reading underscore source code
+[Underscore analysis details](https://www.gitbook.com/book/yoyoyohamapi/undersercore-analysis/details)
