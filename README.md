@@ -103,6 +103,11 @@ TO READ:
 [DP: Do novice to advanced](http://www.hawstein.com/posts/dp-novice-to-advanced.html)
 [Original TopCoder Article entry](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
 
+### Math
+69 sqrt
+Newton Raphson method
+
+
 ####
 TO READ:
 [The Two Pointer Algorithm](https://tp-iiita.quora.com/The-Two-Pointer-Algorithm)
