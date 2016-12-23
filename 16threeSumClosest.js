@@ -5,6 +5,7 @@
  */
 // Closest to the target
 // Duplication shiould not be a concern for correctness
+// Two pointers
 var threeSumClosest = function(nums, target) {
   var S = nums.sort(function(a, b) {
     if (a > b) return 1;
