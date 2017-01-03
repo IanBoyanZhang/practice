@@ -3,6 +3,7 @@
  * @param {string} p
  * @return {number[]}
  */
+// https://github.com/hanzichi/leetcode/tree/master/Algorithms/Find%20All%20Anagrams%20in%20a%20String
 // TLE
 // O(s * plogp)
 var findAnagrams = function(s, p) {
