@@ -29,3 +29,15 @@ var isAnagram = function(s, t) {
   }
   return true;
 };
+
+var isAnagram = function(s, t) {
+  if (s.length !== t.length) { return false; }
+  var a = s.split('').sort();
+  var b = t.split('').sort();
+
+  return a.toString === b.toString;
+};
+// One liner
+var isAnagram = function(s, t) {
+  return s.split('').sort().toString() === t.split('').sort().toString();
+};
