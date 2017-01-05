@@ -38,3 +38,32 @@ var maxSlidingWindow = function(nums, k) {
 
   return result;
 };
+
+// Practice
+var maxSlidingWindow = function(nums, k) {
+  var result = [];
+  var i;
+  var dequeue = [];
+  var len = nums.length;
+  var L = function(arr) {
+    return arr.length;
+  };
+  if (k > len || k === 0) {
+    return result;
+  }
+
+  for (i = 0; i < len; i+=1) {
+    while(L(nums) && nums[dequeue[L(dequeue) - 1]] < nums[i] ) {
+      dequeue.pop();
+    }
+    // Find the left most
+    if (dequeue[0] < i - k + 1) {
+      dequeue.shift();
+    }
+    dequeue.push(i);
+    if (i >= k - 1) {
+      result.push(nums[dequeue[0]]);
+    }
+  }
+  return result;
+};
