@@ -23,6 +23,7 @@ var maxSlidingWindow = function(nums, k) {
     }
     // In case that all elements in the linkedListWithTwoEndsOps are all greater than the current one (descending order)
     // Shift out the 
+    // If the first one (largest one) is the leftmost of the window then shift out head
     if (linkedListWithTwoEndsOps[0] < i - k + 1) {
       linkedListWithTwoEndsOps.shift();
     }
