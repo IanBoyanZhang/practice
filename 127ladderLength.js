@@ -8,6 +8,7 @@
 // https://github.com/chihungyu1116/leetcode-javascript/blob/master/127%20Word%20Ladder.js
 // Javascript hash is slower than setc
 // Graph Breadth first search
+// http://interactivepython.org/runestone/static/pythonds/Graphs/BuildingtheWordLadderGraph.html
 var ladderLength = function(beginWord, endWord, wordList) {
     var visited = new Set();
     var queue = [];
