@@ -137,6 +137,8 @@ KMP for substring searching and matching
 Khan 4019
 [Front end Interview questions](https://github.com/khan4019/front-end-Interview-Questions)
 
+Hanzichi
+[Bit Manipulation](http://www.cnblogs.com/zichi/p/4796940.html)
 
 #### Other
 
