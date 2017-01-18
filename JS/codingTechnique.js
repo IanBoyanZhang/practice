@@ -83,17 +83,17 @@ var obj = function() {
   this.first = function() {
     console.log('first');
     return self;
-  }
+  };
   this.second = function() {
     console.log('second');
     return self;
-  }
+  };
   this.third = function() {
     console.log('third');
     return self;
-  }
+  };
   return this;
-}
+};
 
 var obj = function() {
   this.first = function() {
@@ -109,6 +109,61 @@ var obj = function() {
     return this;
   }.bind(this);
   return this;
-}
+};
 
 obj().first().second().third();
+
+function moveLeft(elem, distance) {
+  var left = 0;
+
+  function frame() {
+    left++;
+    elem.style = left + 'px';
+
+    if (left === distance)
+      clearInterval(timeId);
+  }
+
+  var timeId = setInterval(frame, 10);  // draw every 10ms
+}
+
+var arrProto = Array.prototype;
+function toArray(args) {
+//  return arrProto.slice.call(args);
+  return Array.prototype.slice.call(args);
+}
+
+Function.prototype.curry = function() {
+  if(arguments.length < 1) {
+    return this;            // Nothing to curry, return function
+  }
+  var self = this;
+  var args = toArray(arguments);
+  return function() {
+    return self.apply(this, args.concat(toArray(arguments)));
+  };
+};
+
+//var converter = function(factor, symbol, input) {
+var converter = function(factor, symbol, input) {
+  var rtn = input * factor + symbol;
+//  console.log('rtn', rtn);
+  return input * factor + symbol;
+};
+
+var mileToKm = converter.curry(1.62, 'km');
+//mileToKm(3);        // result here
+console.log(mileToKm(3));        // result here
+
+var kgToLb = converter.curry(2.2, 'lb');
+console.log(kgToLb(3));
+
+// Host vs native object
+// http://stackoverflow.com/questions/7614317/what-is-the-difference-between-native-objects-and-host-objects/7614380#7614380
+
+
+// toString method
+// http://stackoverflow.com/questions/18640776/does-every-object-in-js-have-a-tostring-method
+
+// difference string slice substring substr?
+// http://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring
