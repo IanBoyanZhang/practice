@@ -45,3 +45,7 @@ var multiply = function(A, B) {
 };
 
 // How to improve
+// Further reading
+// http://cs.stackexchange.com/questions/12020/how-to-represent-sparse-matrices
+// Compressed row storage
+// http://www.staff.science.uu.nl/~bisse101/Book/PSC/psc4_2.pdf
