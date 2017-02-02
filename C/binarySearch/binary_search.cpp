@@ -53,9 +53,9 @@ bool my_search_num_in_vector(vector<int> vector , int target_value) {
 int main() {
 //  int size = 1024 * 1024, from = 1, to = 10;
 #ifdef DEBUG
-  int size = 10, from = 1, to = 10;
+  int size = 10, from = 1, to = size, target_value = 2;
 #else
-  int size = 1024 * 1024, from = 1, to = 10;
+  int size = 1024 * 1024, from = 1, to = size, target_value = 2;
 #endif
   vector<int> rand_nums = generate_random_vector(size, from, to);
   sort(rand_nums.begin(), rand_nums.end(), comparator);
@@ -65,14 +65,14 @@ int main() {
 #endif
 
   cout << "Using std library -> " << endl;
-  if(search_num_in_vector(rand_nums, 2)) {
+  if(search_num_in_vector(rand_nums, target_value)) {
     cout << "Found!\n";
   } else {
     cout << "Not found\n";
   }
 
   cout << "Using my own implementation -> " << endl;
-  if(my_search_num_in_vector(rand_nums, 2)) {
+  if(my_search_num_in_vector(rand_nums, target_value)) {
     cout << "Found!\n";
   } else {
     cout << "Not found\n";
