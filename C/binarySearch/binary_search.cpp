@@ -8,6 +8,7 @@ using std::vector;
 using std::sort;
 using std::binary_search;
 using std::endl;
+using std::distance;
 
 #define DEBUG
 
@@ -50,12 +51,13 @@ bool my_search_num_in_vector(vector<int> vector , int target_value) {
   return false;
 };
 
-int main() {
+
+int main(int argc, char **argv) {
 //  int size = 1024 * 1024, from = 1, to = 10;
 #ifdef DEBUG
-  int size = 10, from = 1, to = size, target_value = 2;
+  int size = 10, from = 1, to = size, target_value = argv[2] || 2;
 #else
-  int size = 1024 * 1024, from = 1, to = size, target_value = 2;
+  int size = 1024 * 1024, from = 1, to = size, target_value = argv[2] || 2;
 #endif
   vector<int> rand_nums = generate_random_vector(size, from, to);
   sort(rand_nums.begin(), rand_nums.end(), comparator);
