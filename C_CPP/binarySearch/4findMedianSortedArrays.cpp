@@ -1,3 +1,5 @@
+// https://ask.julyedu.com/question/197
+// http://www.jiuzhang.com/solutions/median-of-two-sorted-arrays/
 class Solution {
   public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
