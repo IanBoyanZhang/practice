@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 
+// http://bangbingsyb.blogspot.com/2014/11/leetcode-merge-k-sorted-lists.html
+
 using namespace std;
 struct ListNode {
   int val;
