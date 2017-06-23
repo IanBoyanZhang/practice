@@ -13,7 +13,7 @@ struct ListNode {
 // exp time complexity?
 class Solution {
   public:
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
+/*    ListNode* mergeKLists(vector<ListNode*>& lists) {
       size_t list_sz = lists.size();
       if (!list_sz) { return nullptr; }
       ListNode *p = lists[0];
@@ -39,5 +39,37 @@ class Solution {
         }
       }
       return head.next;
+    }*/
+
+    // Now update to a binary solution
+    ListNode *mergeKLists(vector<ListNode *> &lists) {
+      if(lists.empty()) return NULL;
+      int end = lists.size() - 1;
+      while (end > 0) {
+        int begin = 0;
+        while (begin < end) {
+          lists[begin] = mergeTwoLists(lists[begin], lists[end]);
+          begin += 1;
+          end -= 1;
+        }
+      }
+      return lists[0];
+    }
+    ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
+      ListNode *head = new ListNode(0);
+      ListNode *tail = head;
+
+      while(l1 && l2) {
+        if (l1->val <= l2->val) {
+          tail->next = l1;
+          l1->next = l1;
+        } else {
+          tail->next = l2;
+          l2->next = l2;
+        }
+        tail = tail->next;
+      }
+      tail->next = l1 ? l1 : l2;
+      return head->next;
     }
 };
