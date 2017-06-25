@@ -74,16 +74,14 @@ public class Cache {
 
   public void set(int key, int value) {
     if (map.containsKey(key)) {
-      Node oldNode = get(key);
-      remove(oldNode);
-      setHead(oldNode);
+      int get_value = get(key);
+      remove(head);
       this.hit += 1;
       this.requests_count += 1;
-      return;
     }
 
     Node newNode = new Node(key, value);
-    if (map.size == capacity) {
+    if (map.size() == capacity) {
       // end.pre.next = end.next;
       end.pre.next = null;
       remove(end);
