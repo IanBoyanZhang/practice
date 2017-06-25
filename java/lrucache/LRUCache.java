@@ -1,12 +1,15 @@
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+// https://java-planet.blogspot.pt/2005/08/how-to-set-up-simple-lru-cache-using.html
+// Reference
 public LRUCache<K, V> extends LinkedHashMap<K, V> {
   private int cacheSize;
   private long accessCount;
   private long hitCount;
 
   public LRUCache(int cacheSize) {
+    // True to have access order
     super(16, 0.75, true);
     this.cacheSize = cacheSize;
     this.hit_count = 0;
@@ -33,6 +36,11 @@ public LRUCache<K, V> extends LinkedHashMap<K, V> {
     super.clear();
     this.hitCount = 0;
     this.getCount = 0;
+  }
+
+  @Override
+  public put(K key, V value) {
+
   }
 
   public float getHitRatio() {
