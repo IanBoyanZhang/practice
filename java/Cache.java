@@ -74,8 +74,11 @@ public class Cache {
 
   public void set(int key, int value) {
     if (map.containsKey(key)) {
-      int get_value = get(key);
-      remove(head);
+      Node old_node = map.get(key);
+      // Below line may not be necessary
+      old_node.value = value;
+      remove(old_node);
+      setHead(old_node);
       this.hit += 1;
       this.requests_count += 1;
     }
