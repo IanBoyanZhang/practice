@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 class Node {
   int key;
   int value;
@@ -30,7 +32,7 @@ public class Cache {
 
   public int get(int key) {
     this.requests_count += 1;
-    if (map.containsKey) {
+    if (map.containsKey(key)) {
       Node n = map.get(key);
       remove(n);
       setHead(n);
@@ -71,11 +73,11 @@ public class Cache {
   }
 
   public void set(int key, int value) {
-    if (map.containsKey(int key)) {
+    if (map.containsKey(key)) {
       Node oldNode = get(key);
       remove(oldNode);
       setHead(oldNode);
-      this.hit += 1
+      this.hit += 1;
       this.requests_count += 1;
       return;
     }
