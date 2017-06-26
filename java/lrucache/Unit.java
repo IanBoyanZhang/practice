@@ -1,5 +1,6 @@
 //public class Unit implements Comparable<Element> {
-public class Unit implements Element<Comparable> {
+// public class Unit implements Element {
+abstract class Unit implements Element {
   private int value;
 
   public int compareTo(Unit u) {
