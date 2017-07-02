@@ -22,7 +22,8 @@ var longestConsecutive = function(nums) {
     if (hashmap[nums[iter]] === undefined) { hashmap[nums[iter]] = 1; hashdup[nums[iter]] = true; }
     if (hashmap[nums[iter]+1] !== undefined) { hashmap[nums[iter]] += hashmap[nums[iter]+1]; }
 
-    if (hashmap[nums[iter]] > maxLen) { maxLen = hashmap[nums[iter]]; }
+    // This is faster
+    maxLen = Math.max(maxLen, hashmap[nums[iter]]);
     // Keeps iterating till updating all previous ones ()
     prevKey = nums[iter] - 1; 
     while(hashmap[prevKey]) {
