@@ -10,11 +10,9 @@ var longestConsecutive = function(nums) {
   var hashmap = {};
   var hashdup = {}; // Remove duplicates
 
-  if (nums.length === 0) return 0;
-  if (nums.length === 1) return 1;
+  if (nums.length <= 1) return nums.length;
 
-  // duplicated numbers? 
-  // first pass
+  // One pass
   var maxLen = 1; var prevKey;
   for (var iter = 0, len = nums.length; iter < len; iter++) {
     if (hashdup[nums[iter]]) continue;
