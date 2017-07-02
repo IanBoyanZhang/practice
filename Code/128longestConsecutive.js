@@ -4,6 +4,8 @@
  * @return {number}
  */
 
+// Take a look at c++ solution, it is even better
+
 // Using iterative approach instead
 var longestConsecutive = function(nums) {
   'use strict';

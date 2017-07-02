@@ -3,6 +3,8 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+// Take a look at cpp solution, it is much better
 var longestConsecutive = function(nums) {
   var hashmap = {};
 
