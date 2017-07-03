@@ -5,6 +5,7 @@
  * @return {number[][]}
  */
 
+// See CPP version of solution heap's method for better solution
 var permute = function(nums) {
   var len = nums.length;
   if (len <= 1) { return [nums]; }
