@@ -3,6 +3,8 @@
 using namespace std;
 
 // Recursive Heap`s algo for generating all permutations
+// https://en.wikipedia.org/wiki/Heap%27s_algorithm
+// http://ruslanledesma.com/2016/06/17/why-does-heap-work.html
 class Solution {
   public:
     vector< vector<int> > permute(vector<int>& nums) {
