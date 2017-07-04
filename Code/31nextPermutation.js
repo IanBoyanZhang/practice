@@ -23,6 +23,7 @@ var nextPermutation = function(nums) {
   var i, L = nums.length;
   var k = -1;
   // step 1
+  // Finding decreasing sequence
   for (i = L - 1 - 1; i>=0; i-=1){
     if (nums[i] < nums[i+1]) {
       k = i;
@@ -30,6 +31,8 @@ var nextPermutation = function(nums) {
     }
   }
   // last
+  // All in increasing order
+  // So reverse the sequence
   if (k < 0) {
     // range generate first
     return reverse(nums, 0, L-1);
@@ -37,12 +40,11 @@ var nextPermutation = function(nums) {
   // step 2
   for (i = L - 1; i >= k; i-=1) {
     if(nums[i] > nums[k]) {
-      l = i;
       break;
     }
   }
   // step 3
-  swap(nums, l, k);
+  swap(nums, i, k);
   // step 4
   reverse(nums, k+1, L-1);
 };
