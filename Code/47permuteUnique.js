@@ -89,7 +89,9 @@ var permuteUnique = function(nums) {
 
 
 // new solution based on swap
-
+// No sorting
+// No hash required
+// This js solution is fast
 var permute = function(nums) {
   var nums_dup = nums.slice();
   var res = [];
@@ -114,10 +116,8 @@ var permute = function(nums) {
       res.push(nums.slice());
       return res;
     }
-    var hash = [];
     for (var i = l; i < nums.length; i+=1) {
       if (contain_duplicate(nums, l, i)) { continue; }
-      hash.push(nums[i]);
       swap(nums, i, l);
       dfs(nums, l+1, res);
       swap(nums, l, i);
