@@ -29,8 +29,7 @@ TODO: Optimize 78 solution
 TODO: Review 3, 5
 [Manacher’s algorithm](http://articles.leetcode.com/longest-palindromic-substring-part-ii/)
 
-TODO: 146 LRU
-TODO: expand LFU cache
+TODO: expand 146 to LFU cache
 
 TODO: Rewrite 79 from scratch
 Advanced Tree?
@@ -156,6 +155,10 @@ Redis source code reading
 
 [How to read redis source-code (Chinese)](https://github.com/huangz1990/blog/blob/master/diary/2014/how-to-read-redis-source-code.rst)
 
+
+## General guidelines
+
+[Technical interview cheatsheet](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b)
 
 ## TODO:
 Implemente promise, yield and other functional meme
