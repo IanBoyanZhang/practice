@@ -1,4 +1,6 @@
 #include <vector>
+#include <stack>
+
 
 using namespace std;
 
@@ -10,7 +12,7 @@ struct TreeNode {
 };
 
 // Let's do it in recursive
-class Solution {
+/*class Solution {
 public:
   vector<int> inorderTraversal(TreeNode* root) {
     vector<int> stack;
@@ -24,4 +26,26 @@ public:
     res.push_back(r->val);
     dfs(r->right, res);
   }
+};*/
+
+class Solution {
+  public:
+    vector<int> inorderTraversal(TreeNode* root) {
+      stack<const TreeNode*> s;
+      vector<int> result;
+
+      const TreeNode* p = root;
+      while(!s.empty() || p != nullptr) {
+        if(p != nullptr) {
+          s.push(p);
+          p = p->left;
+        } else {
+          p = s.top();
+          s.pop();
+          result.push_back(p->val);
+          p = p->right;
+        }
+      }
+      return result;
+    }
 };
