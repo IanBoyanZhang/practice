@@ -3,7 +3,7 @@ var TreeNode = require('./include/TreeNode').TreeNode;
 /**
  * @constructor
  * @param {TreeNode} root - root of the binary searhc tree
- *
+ * This is a non recursive inorder iterator
  */
 // isLargest
 // O(n) memory
