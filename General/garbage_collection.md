@@ -21,3 +21,7 @@ Program suspended?
 Short answer:
 
 Mark and sweep: mark: traverse object graph starting from root objects, sweep: garbage collect unmarked objects. Optimizations: young/old generations, incremental mark and sweep
+
+Reference:
+
+[JS Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
