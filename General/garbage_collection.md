@@ -17,3 +17,7 @@ There are no additional overheads incurred during the execution of the algorithm
 Program suspended?
 
 [Mark and sweep garbage collection algorithm](https://www.geeksforgeeks.org/mark-and-sweep-garbage-collection-algorithm/)
+
+Short answer:
+
+Mark and sweep: mark: traverse object graph starting from root objects, sweep: garbage collect unmarked objects. Optimizations: young/old generations, incremental mark and sweep
