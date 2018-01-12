@@ -2,3 +2,7 @@
 
 SSL/TLS
 [An overview of the SSL or TLS handshake - IBM](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10660_.htm)
+
+computer organization
+
+MMU Linux, bank switching Translate Lookaside Table and Virtual memory organization paged, segmented, segmentated memory with paging
