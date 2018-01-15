@@ -31,6 +31,7 @@ int uniquePaths(int m , int n) {
 
 // Analytical solution with O(n) time complexity O(1) space
 // Using Pascal triangle
+// http://mathworld.wolfram.com/PascalsTriangle.html
 int uniquePaths(int m, int n) {
 	if (m == 1 || n == 1) { return 1; }
 
