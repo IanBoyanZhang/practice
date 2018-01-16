@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  // It is essentially using an increasing stack
+  // It is essentially using an ascending stack
   int largestRectangleArea(vector<int>& heights) {
     stack<int> s; 
     int t = 0; int result = 0;
