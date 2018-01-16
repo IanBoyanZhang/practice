@@ -26,7 +26,7 @@ public:
 
       // If current stack is empty() top element is shortest to the left 
       // Combining stack till current top is smaller than current element
-      result = max(result, heights[tmp] * (s.empty() ? t : t - (s.top() - 1)));
+      result = max(result, heights[tmp] * (s.empty() ? t : t - s.top() - 1));
     }
     return result;
   }
