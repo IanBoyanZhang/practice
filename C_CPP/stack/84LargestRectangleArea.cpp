@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  // It is essentially using a increasing stack
+  // It is essentially using an increasing stack
   int largestRectangleArea(vector<int>& heights) {
     stack<int> s; 
     int t = 0; int result = 0;
@@ -20,7 +20,7 @@ public:
         continue;
       }
 
-      // Get top element of stack which tallest so far
+      // Get top element of stack which is tallest so far
       int tmp = s.top();
       s.pop();
 
