@@ -46,3 +46,30 @@ var grid = ["11110","11010","11000","00000"];
 var grid = ["11000", "11000" ,"00100" , "00011"];
 var rtn = numIslands(grid);
 console.log(rtn);
+
+// Second pass
+
+var numIslands = function(grid) {
+    var recurse = function(grid, i, j) {
+        if (!grid[i] || !Number(grid[i][j]) ) { return; }
+        grid[i][j] = 0;
+        recurse(grid, i - 1, j);
+        recurse(grid, i, j - 1);
+
+        recurse(grid, i + 1, j);
+        recurse(grid, i, j + 1);
+    };
+    
+    var counter = 0;
+    var i, j;
+    
+    for (i = 0; i < grid.length; i += 1) {
+        for (j = 0; j < grid[0].length; j += 1) {
+            if (Number(grid[i][j]) === 1) {
+                counter += 1;
+                recurse(grid, i, j);
+            }
+        }
+    }
+    return counter;
+}
