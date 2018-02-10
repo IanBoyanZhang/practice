@@ -49,6 +49,9 @@ console.log(rtn);
 
 // Second pass
 
+// TODO: Read: https://leetcode.com/articles/number-of-islands/
+// What is union find?
+
 var numIslands = function(grid) {
     var recurse = function(grid, i, j) {
         if (!grid[i] || !Number(grid[i][j]) ) { return; }
