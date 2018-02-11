@@ -1,3 +1,5 @@
+// Reference
+// https://github.com/kartikkukreja/blog-codes/blob/master/src/Graham%20Scan%20Convex%20Hull.cpp
 #include <cmath>
 #include <cstdio>
 #include <cstring>
