@@ -3,6 +3,10 @@
  * @return {number}
  */
 
+// TODO: references:
+// http://www.cnblogs.com/grandyang/p/4601208.html
+// http://fisherlei.blogspot.com/2017/08/leetcode-basic-calculator-ii-solution.html
+
 // Non recursive fast solution
 // Two passes solution
 var calculate = function(s) {
