@@ -8,6 +8,7 @@
  * };
  */
 
+// In practice, we should consider deallocation after new. 
 class Codec {
 public:
   string serialize(TreeNode* root) {
