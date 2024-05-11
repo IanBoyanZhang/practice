@@ -60,3 +60,45 @@ public:
     return root;
   }
 };
+
+/* ----------------------------- iteration 2 -------------------------------*/
+// Using istringstream and ostringstream
+class Codec {
+public:
+    // Encodes a tree to a single string.
+    string serialize(TreeNode* root) {
+        ostringstream out;
+        _serialize(root, out);
+        return out.str();
+    }
+
+    // Decodes your encoded data to tree.
+    TreeNode* deserialize(string data) {
+        istringstream in(data);
+        return _deserialize(in);
+    }
+
+private:
+    void _serialize(TreeNode* root, ostringstream& out) {
+        if (!root) {
+            out << "#,";
+            return;
+        }
+        out << root->val << ",";
+        _serialize(root->left, out);
+        _serialize(root->right, out);
+    }
+
+    TreeNode* _deserialize(istringstream& in) {
+        string token;
+        getline(in, token, ',');
+        if (token == "#") {
+            return nullptr;
+        }
+        TreeNode* root = new TreeNode(stoi(token));
+        root->left = _deserialize(in);
+        root->right = _deserialize(in);
+        return root;
+    }
+};
+
