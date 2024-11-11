@@ -1,4 +1,5 @@
 class Solution {
+// Stack and backtracking
 public:
     string minRemoveToMakeValid(string s) {
         std::string result;
